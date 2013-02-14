@@ -1,5 +1,5 @@
 // Common Intermediate Language (.NET) LEXER and PARSER
-grammar CIL;
+grammar CIL2;
 
 @header 
 {
@@ -8,17 +8,249 @@ grammar CIL;
 
 /* LEXER */
 
-@options
-{
-  exportVocab = CILLexer;
-  k = 2;
-}
+ADD :                 'add' ;
+ADD_OVF :             'add.ovf' ;
+ADD_OVF_UN :          'add.ovf.un' ;
+ARGLIST :             'arglist' ;
+BEQ :                 'beq' ;
+BEQ_S :               'beq.s' ;
+BGE :                 'bge' ;
+BGE_S :               'bge.s' ;
+BGE_UN :              'bge.un' ;
+BGE_UN_S :            'bge.un.s' ;
+BGT :                 'bgt' ;
+BGT_S :               'bgt.s' ;
+BGT_UN :              'bgt.un' ;
+BGT_UN_S :            'bgt.un.s' ;
+BLE :                 'ble' ;
+BLE_S :               'ble.s' ;
+BLE_UN :              'ble.un' ;
+BLE_UN_S :            'ble.un.s' ;
+BLOB :                'blob' ;
+BLOB_OBJECT :         'blob_object' ;
+BLT :                 'blt' ;
+BLT_S :               'blt.s' ;
+BLT_UN :              'blt.un' ;
+BLT_UN_S :            'blt.un.s' ;
+BNE_UN :              'bne.un' ;
+BNE_UN_S :            'bne.un.s' ;
+BOX :                 'box' ;
+BR :                  'br' ;
+BR_S :                'br.s' ;
+BREAK :               'break' ;
+BRFALSE :             'brfalse' ;
+BRFALSE_S :           'brfalse.s' ;
+BRINST :              'brinst' ;
+BRINST_S :            'brinst.s' ;
+BRNULL :              'brnull' ;
+BRNULL_S :            'brnull.s' ;
+BRTRUE :              'brtrue' ;
+BRTRUE_S :            'brtrue.s' ;
+BRZERO :              'brzero' ;
+BRZERO_S :            'brzero.s' ;
+BSTR :                'bstr' ;
+BYTEARRAY :           'bytearray' ;
+BYVALSTR :            'byvalstr' ;
+CALL :                'call' ;
+CALLI :               'calli' ;
+CALLMOSTDERIVED :     'callmostderived' ;
+CALLVIRT :            'callvirt' ;
+CARRAY :              'carray' ;
+CASTCLASS :           'castclass' ;
+CATCH :               'catch' ;
+CDECL :               'cdecl' ;
+CEQ :                 'ceq' ;
+CF :                  'cf' ;
+CGT :                 'cgt' ;
+CGT_UN :              'cgt.un' ;
+CHAR :                'char' ;
+CIL :                 'cil' ;
+CKFINITE :            'ckfinite' ;
+CLASS :               'class' ;
+CLSID :               'clsid' ;
+CLT :                 'clt' ;
+CLT_UN :              'clt.un' ;
+CONST :               'const' ;
+CONV_I :              'conv.i' ;
+CONV_I1 :             'conv.i1' ;
+CONV_I2 :             'conv.i2' ;
+CONV_I4 :             'conv.i4' ;
+CONV_I8 :             'conv.i8' ;
+CONV_OVF_I :          'conv.ovf.i' ;
+CONV_OVF_I_UN :       'conv.ovf.i.un' ;
+CONV_OVF_I1 :         'conv.ovf.i1' ;
+CONV_OVF_I1_UN :      'conv.ovf.i1.un' ;
+CONV_OVF_I2 :         'conv.ovf.i2' ;
+CONV_OVF_I2_UN :      'conv.ovf.i2.un' ;
+CONV_OVF_I4 :         'conv.ovf.i4' ;
+CONV_OVF_I4_UN :      'conv.ovf.i4.un' ;
+CONV_OVF_I8 :         'conv.ovf.i8' ;
+CONV_OVF_I8_UN :      'conv.ovf.i8.un' ;
+CONV_OVF_U :          'conv.ovf.u' ;
+CONV_OVF_U_UN :       'conv.ovf.u.un' ;
+CONV_OVF_U1 :         'conv.ovf.u1' ;
+CONV_OVF_U1_UN :      'conv.ovf.u1.un' ;
+CONV_OVF_U2 :         'conv.ovf.u2' ;
+CONV_OVF_U2_UN :      'conv.ovf.u2.un' ;
+CONV_OVF_U4 :         'conv.ovf.u4' ;
+CONV_OVF_U4_UN :      'conv.ovf.u4.un' ;
+CONV_OVF_U8 :         'conv.ovf.u8' ;
+CONV_OVF_U8_UN :      'conv.ovf.u8.un' ;
+CONV_R_UN :           'conv.r.un' ;
+CONV_R4 :             'conv.r4' ;
+CONV_R8 :             'conv.r8' ;
+CONV_U :              'conv.u' ;
+CONV_U1 :             'conv.u1' ;
+CONV_U2 :             'conv.u2' ;
+CONV_U4 :             'conv.u4' ;
+CONV_U8 :             'conv.u8' ;
+CPBLK :               'cpblk' ;
+CPOBJ :               'cpobj' ;
+DIV :                 'div' ;
+DIV_UN :              'div.un' ;
+DUP :                 'dup' ;
+ENDFAULT :            'endfault' ;
+ENDFILTER :           'endfilter' ;
+ENDFINALLY :          'endfinally' ;
+INITBLK :             'initblk' ;
+INITOBJ :             'initobj' ;
+JMP :                 'jmp' ;
+LDARG :               'ldarg' ;
+LDARG_0 :             'ldarg.0' ;
+LDARG_1 :             'ldarg.1' ;
+LDARG_2 :             'ldarg.2' ;
+LDARG_3 :             'ldarg.3' ;
+LDARG_S :             'ldarg.s' ;
+LDARGA :              'ldarga' ;
+LDARGA_S :            'ldarga.s' ;
+LDC_I4 :              'ldc.i4' ;
+LDC_I4_0 :            'ldc.i4.0' ;
+LDC_I4_1 :            'ldc.i4.1' ;
+LDC_I4_2 :            'ldc.i4.2' ;
+LDC_I4_3 :            'ldc.i4.3' ;
+LDC_I4_4 :            'ldc.i4.4' ;
+LDC_I4_5 :            'ldc.i4.5' ;
+LDC_I4_6 :            'ldc.i4.6' ;
+LDC_I4_7 :            'ldc.i4.7' ;
+LDC_I4_8 :            'ldc.i4.8' ;
+LDC_I4_M1 :           'ldc.i4.m1' ;
+LDC_I4_S :            'ldc.i4.s' ;
+LDC_I8 :              'ldc.i8' ;
+LDC_R4 :              'ldc.r4' ;
+LDC_R8 :              'ldc.r8' ;
+LDELEM_I :            'ldelem.i' ;
+LDELEM_I1 :           'ldelem.i1' ;
+LDELEM_I2 :           'ldelem.i2' ;
+LDELEM_I4 :           'ldelem.i4' ;
+LDELEM_I8 :           'ldelem.i8' ;
+LDELEM_R4 :           'ldelem.r4' ;
+LDELEM_R8 :           'ldelem.r8' ;
+LDELEM_REF :          'ldelem.ref' ;
+LDELEM_U1 :           'ldelem.u1' ;
+LDELEM_U2 :           'ldelem.u2' ;
+LDELEM_U4 :           'ldelem.u4' ;
+LDELEM_U8 :           'ldelem.u8' ;
+LDELEMA :             'ldelema' ;
+LDFLD :               'ldfld' ;
+LDFLDA :              'ldflda' ;
+LDFTN :               'ldftn' ;
+LDIND_I :             'ldind.i' ;
+LDIND_I1 :            'ldind.i1' ;
+LDIND_I2 :            'ldind.i2' ;
+LDIND_I4 :            'ldind.i4' ;
+LDIND_I8 :            'ldind.i8' ;
+LDIND_R4 :            'ldind.r4' ;
+LDIND_R8 :            'ldind.r8' ;
+LDIND_REF :           'ldind.ref' ;
+LDIND_U1 :            'ldind.u1' ;
+LDIND_U2 :            'ldind.u2' ;
+LDIND_U4 :            'ldind.u4' ;
+LDIND_U8 :            'ldind.u8' ;
+LDLEN :               'ldlen' ;
+LDLOC :               'ldloc' ;
+LDLOC_0 :             'ldloc.0' ;
+LDLOC_1 :             'ldloc.1' ;
+LDLOC_2 :             'ldloc.2' ;
+LDLOC_3 :             'ldloc.3' ;
+LDLOC_S :             'ldloc.s' ;
+LDLOCA :              'ldloca' ;
+LDLOCA_S :            'ldloca.s' ;
+LDNULL :              'ldnull' ;
+LDOBJ :               'ldobj' ;
+LDSFLD :              'ldsfld' ;
+LDSFLDA :             'ldsflda' ;
+LDSTR :               'ldstr' ;
+LDTOKEN :             'ldtoken' ;
+LDVIRTFTN :           'ldvirtftn' ;
+LEAVE :               'leave' ;
+LEAVE_S :             'leave.s' ;
+LOCALLOC :            'localloc' ;
+MKREFANY :            'mkrefany' ;
+MUL :                 'mul' ;
+MUL_OVF :             'mul.ovf' ;
+MUL_OVF_UN :          'mul.ovf.un' ;
+NEG :                 'neg' ;
+NEWARR :              'newarr' ;
+NEWOBJ :              'newobj' ;
+NOP :                 'nop' ;
+NOT :                 'not' ;
+OR :                  'or' ;
+POP :                 'pop' ;
+REFANYTYPE :          'refanytype' ;
+REFANYVAL :           'refanyval' ;
+REM :                 'rem' ;
+REM_UN :              'rem.un' ;
+REQUEST :             'request' ;
+RET :                 'ret' ;
+RETHROW :             'rethrow' ;
+SHL :                 'shl' ;
+SHR :                 'shr' ;
+SHR_UN :              'shr.un' ;
+SIZEOF :              'sizeof' ;
+STARG :               'starg' ;
+STARG_S :             'starg.s' ;
+STELEM_I :            'stelem.i' ;
+STELEM_I1 :           'stelem.i1' ;
+STELEM_I2 :           'stelem.i2' ;
+STELEM_I4 :           'stelem.i4' ;
+STELEM_I8 :           'stelem.i8' ;
+STELEM_R4 :           'stelem.r4' ;
+STELEM_R8 :           'stelem.r8' ;
+STELEM_REF :          'stelem.ref' ;
+STFLD :               'stfld' ;
+STIND_I :             'stind.i' ;
+STIND_I1 :            'stind.i1' ;
+STIND_I2 :            'stind.i2' ;
+STIND_I4 :            'stind.i4' ;
+STIND_I8 :            'stind.i8' ;
+STIND_R4 :            'stind.r4' ;
+STIND_R8 :            'stind.r8' ;
+STIND_REF :           'stind.ref' ;
+STLOC :               'stloc' ;
+STLOC_0 :             'stloc.0' ;
+STLOC_1 :             'stloc.1' ;
+STLOC_2 :             'stloc.2' ;
+STLOC_3 :             'stloc.3' ;
+STLOC_S :             'stloc.s' ;
+STOBJ :               'stobj' ;
+STSFLD :              'stsfld' ;
+SUB :                 'sub' ;
+SUB_OVF :             'sub.ovf' ;
+SUB_OVF_UN :          'sub.ovf.un' ;
+SWITCH :              'switch' ;
+TAIL_ :               'tail.' ;
+THROW :               'throw' ;
+UNALIGNED_ :          'unaligned.' ;
+UNBOX :               'unbox' ;
+VOLATILE_ :           'volatile.' ;
+XOR :                 'xor' ;
 
-tokens
-{
-ID             : LETTER (LETTER | DIGIT | '_')*
+ID             : (LETTER | '_') (LETTER | DIGIT | '_')*
                ;
 DOTTEDNAME     : ID ('.' ID)*
+               ;
+fragment
+LETTER: ('a'..'z'|'A'..'Z') 
                ;
 fragment
 DIGIT          : '0'..'9'
@@ -31,25 +263,25 @@ EXPONENT       : ('e'|'E') ('+'|'-')? (DIGIT)+
                ;
 fragment
 ESC            : '\\'
-						    ( 'n'
-						    | 'r'
-						    | 't'
-						    | 'b'
-						    | 'f'
-						    | '"'
-						    | '\''
-						    | '\\'
-						    | '?'
-						    | ('u')+ HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT  // unicode
-						    | ('x'|'X') HEX_DIGIT HEX_DIGIT
-						    | ('0'..'3')
-						      (
-						       ('0'..'7')
-						       ('0'..'7')?
-						      )?
-						    | ('4'..'7')
-						      ('0'..'9')?
-						    )
+                ( 'n'
+                | 'r'
+                | 't'
+                | 'b'
+                | 'f'
+                | '"'
+                | '\''
+                | '\\'
+                | '?'
+                | ('u')+ HEX_DIGIT HEX_DIGIT HEX_DIGIT HEX_DIGIT  // unicode
+                | ('x'|'X') HEX_DIGIT HEX_DIGIT
+                | ('0'..'3')
+                  (
+                   ('0'..'7')
+                   ('0'..'7')?
+                  )?
+                | ('4'..'7')
+                  ('0'..'9')?
+                )
                ;
 QSTRING        : '"' (ESC|~('"'|'\\'))* '"' ;
 SQSTRING       : '\'' (ESC|~('\''|'\\'))* '\'' ;
@@ -63,12 +295,8 @@ FLOAT64        : DOT (DIGIT)+ (EXPONENT)?
                | ('-')? DIGIT+ (({input.LA(2) != '.'}? DOT (DIGIT)* (EXPONENT)?)
                                 | EXPONENT
                                )
-                               
-               | 
                ;
-INSTR_*
 HEXBYTE        : ('-')? DIGIT ('a'..'f'|'A'..'F') ;
-}
 
 /* PARSER */
 
@@ -147,7 +375,7 @@ typedef_t               : '.typedef' className 'as' dottedName ;
 typedef_m               : '.typedef' memberRef 'as' dottedName ;
 typedef_f               : typedef_m ;
 typedef_mr              : typedef_m ;
-typedef_ca              : '.typedef' customDescr 'as' dottedName ;
+typedef_ca              : '.typedef' customDescr 'as' dottedName 
                         | '.typedef' customDescrWithOwner 'as' dottedName
                         ;
 typedefDecl             : typedef_ts 
@@ -254,11 +482,7 @@ vtableHead              : '.vtable' '=' '('        /* deprecated */
 /*  Namespace and class declaration  */                         
 nameSpaceHead           : '.namespace' dottedName 
                         ;
-
-_class                  : '.class' 
-                        ;
-                        
-classHeadBegin          : _class classAttr dottedName typarsClause 
+classHeadBegin          : '.class' classAttr dottedName typarsClause 
                         ;
 classHead               : classHeadBegin extendsClause implClause 
                         ;
@@ -821,43 +1045,96 @@ objSeq                  : /* EMPTY */
 methodSpec              : 'method' 
                         ;
                         
-instr_none              : INSTR_NONE 
+instr_none              : ADD | ADD_OVF | ADD_OVF_UN | AND
+  | ARGLIST | BREAK | CEQ | CGT
+  | CGT_UN | CKFINITE | CLT | CLT_UN
+  | CONV_I | CONV_I1 | CONV_I2 | CONV_I4
+  | CONV_I8 | CONV_OVF_I | CONV_OVF_I_UN | CONV_OVF_I1
+  | CONV_OVF_I1_UN | CONV_OVF_I2 | CONV_OVF_I2_UN | CONV_OVF_I4
+  | CONV_OVF_I4_UN | CONV_OVF_I8 | CONV_OVF_I8_UN | CONV_OVF_U
+  | CONV_OVF_U_UN | CONV_OVF_U1 | CONV_OVF_U1_UN | CONV_OVF_U2
+  | CONV_OVF_U2_UN | CONV_OVF_U4 | CONV_OVF_U4_UN | CONV_OVF_U8
+  | CONV_OVF_U8_UN | CONV_R_UN | CONV_R4 | CONV_R8
+  | CONV_U | CONV_U1 | CONV_U2 | CONV_U4
+  | CONV_U8 | CPBLK | DIV | DIV_UN
+  | DUP | ENDFAULT | ENDFILTER | ENDFINALLY
+  | INITBLK | LDARG_0 | LDARG_1
+  | LDARG_2 | LDARG_3 | LDC_I4_0 | LDC_I4_1
+  | LDC_I4_2 | LDC_I4_3 | LDC_I4_4 | LDC_I4_5
+  | LDC_I4_6 | LDC_I4_7 | LDC_I4_8 | LDC_I4_M1
+  | LDELEM_I | LDELEM_I1 | LDELEM_I2 | LDELEM_I4
+  | LDELEM_I8 | LDELEM_R4 | LDELEM_R8 | LDELEM_REF
+  | LDELEM_U1 | LDELEM_U2 | LDELEM_U4 | LDIND_I
+  | LDIND_I1 | LDIND_I2 | LDIND_I4 | LDIND_I8
+  | LDIND_R4 | LDIND_R8 | LDIND_REF | LDIND_U1
+  | LDIND_U2 | LDIND_U4 | LDLEN | LDLOC_0
+  | LDLOC_1 | LDLOC_2 | LDLOC_3 | LDNULL
+  | LOCALLOC | MUL | MUL_OVF | MUL_OVF_UN
+  | NEG | NOP | NOT | OR
+  | POP | REFANYTYPE | REM | REM_UN
+  | RET | RETHROW | SHL | SHR
+  | SHR_UN | STELEM_I | STELEM_I1 | STELEM_I2
+  | STELEM_I4 | STELEM_I8 | STELEM_R4 | STELEM_R8
+  | STELEM_REF | STIND_I | STIND_I1 | STIND_I2
+  | STIND_I4 | STIND_I8 | STIND_R4 | STIND_R8
+  | STIND_REF | STLOC_0 | STLOC_1 | STLOC_2
+  | STLOC_3 | SUB | SUB_OVF | SUB_OVF_UN
+  | TAIL_ | THROW | VOLATILE_ | XOR 
                         ;
 
-instr_var               : INSTR_VAR 
+instr_var               : LDARG
+  | LDARG_S
+  | LDARGA
+  | LDARGA_S
+  | LDLOC
+  | LDLOC_S
+  | LDLOCA
+  | LDLOCA_S
+  | STARG
+  | STARG_S
+  | STLOC
+  | STLOC_S 
                         ;
 
-instr_i                 : INSTR_I 
+instr_i                 : LDC_I4
+  | LDC_I4_S
+  | UNALIGNED_ 
                         ;
 
-instr_i8                : INSTR_I8 
+instr_i8                : LDC_I8 
                         ;
 
-instr_r                 : INSTR_R 
+instr_r                 : LDC_R4 | LDC_R8 
                         ;
 
-instr_brtarget          : INSTR_BRTARGET 
+instr_brtarget          : BEQ | BEQ_S | BGE | BGE_S
+  | BGE_UN | BGE_UN_S | BGT | BGT_S | BGT_UN | BGT_UN_S
+  | BLE | BLE_S | BLE_UN | BLE_UN_S | BLT | BLT_S
+  | BLT_UN | BLT_UN_S | BNE_UN | BNE_UN_S | BR | BR_S
+  | BRFALSE | BRFALSE_S | BRTRUE | BRTRUE_S | LEAVE | LEAVE_S 
                         ;
 
-instr_method            : INSTR_METHOD 
+instr_method            : CALL | CALLVIRT | JMP | LDFTN | LDVIRTFTN | NEWOBJ 
                         ;
 
-instr_field             : INSTR_FIELD 
+instr_field             : LDFLD | LDFLDA | LDSFLD | LDSFLDA | STFLD | STSFLD 
                         ;
 
-instr_type              : INSTR_TYPE 
+instr_type              : BOX | CASTCLASS | CPOBJ | INITOBJ | ISINST |
+  LDELEMA | LDOBJ | MKREFANY | NEWARR | REFANYVAL |
+  SIZEOF | STOBJ | UNBOX 
                         ;
 
-instr_string            : INSTR_STRING 
+instr_string            : LDSTR 
                         ;
 
-instr_sig               : INSTR_SIG 
+instr_sig               : CALLI 
                         ;
 
-instr_tok               : INSTR_TOK 
+instr_tok               : LDTOKEN 
                         ;
 
-instr_switch            : INSTR_SWITCH 
+instr_switch            : SWITCH 
                         ;
 
 instr_r_head            : instr_r '(' 
@@ -1321,5 +1598,4 @@ manifestResDecl         : '.file' dottedName 'at' int32
                         | customAttrDecl
                         | compControl
                         ;
-
 
