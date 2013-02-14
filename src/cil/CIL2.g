@@ -3,7 +3,7 @@ grammar CIL2;
 
 @header 
 {
-  package org.transatlantic.cil;
+  package cil;
 }
 
 /* LEXER */
@@ -12,6 +12,7 @@ ADD :                 'add' ;
 ADD_OVF :             'add.ovf' ;
 ADD_OVF_UN :          'add.ovf.un' ;
 ARGLIST :             'arglist' ;
+AND :                 'and' ;
 BEQ :                 'beq' ;
 BEQ_S :               'beq.s' ;
 BGE :                 'bge' ;
@@ -114,6 +115,7 @@ ENDFILTER :           'endfilter' ;
 ENDFINALLY :          'endfinally' ;
 INITBLK :             'initblk' ;
 INITOBJ :             'initobj' ;
+ISINST :              'isinst' ;
 JMP :                 'jmp' ;
 LDARG :               'ldarg' ;
 LDARG_0 :             'ldarg.0' ;
@@ -292,11 +294,21 @@ INT64          : ('-')? (DIGIT)+
 DOT            : '.'
                ;
 FLOAT64        : DOT (DIGIT)+ (EXPONENT)?
-               | ('-')? DIGIT+ (({input.LA(2) != '.'}? DOT (DIGIT)* (EXPONENT)?)
+               | ('-')? DIGIT+ (({_input.LA(2) != '.'}? DOT (DIGIT)* (EXPONENT)?)
                                 | EXPONENT
                                )
                ;
 HEXBYTE        : ('-')? DIGIT ('a'..'f'|'A'..'F') ;
+// Whitespace -- ignored
+WS  : ( ' '
+    | '\t'
+    | '\f'
+      // handle newlines
+    | '\r\n'  // Evil DOS
+    | '\r'    // Macintosh
+    | '\n'    // Unix (the right way)
+    )+ -> channel(HIDDEN)
+  ;
 
 /* PARSER */
 
@@ -330,7 +342,6 @@ decl                    : classHead '{' classDecls '}'
                         | '.stackreserve' int64 
                         | languageDecl
                         | typedefDecl
-                        | compControl
                         | '.typelist' '{' classNameSeq '}'
                         | '.mscorlib' 
                         ;
@@ -352,7 +363,7 @@ id                      : ID
                         | SQSTRING 
                         ;
 
-dottedName              : id 
+dottedName              : id
                         | DOTTEDNAME 
                         | dottedName '.' dottedName 
                         ;
@@ -383,20 +394,6 @@ typedefDecl             : typedef_ts
                         | typedef_m 
                         | typedef_ca 
                         ;
-                        
-/*  Compilation control directives are processed within yylex(), 
-    displayed here just for grammar completeness */
-compControl             : P_DEFINE dottedName 
-                        | P_DEFINE dottedName compQstring 
-                        | P_UNDEF dottedName 
-                        | P_IFDEF dottedName                         
-                        | P_IFNDEF dottedName  
-                        | P_ELSE 
-                        | P_ENDIF 
-                        | P_INCLUDE QSTRING 
-                        | ';' 
-                        ; 
-                                              
 /* Custom attribute declarations  */
 customDescr             : '.custom' customType 
                         | '.custom' customType '=' compQstring 
@@ -429,12 +426,10 @@ customBlobDescr         : customBlobArgs customBlobNVPairs
                         
 customBlobArgs          : /* EMPTY */ 
                         | customBlobArgs serInit 
-                        | customBlobArgs compControl 
                         ;
                         
 customBlobNVPairs       : /* EMPTY */ 
                         | customBlobNVPairs fieldOrProp serializType dottedName '=' serInit 
-                        | customBlobNVPairs compControl 
                         ;
 
 fieldOrProp             : 'field' 
@@ -589,7 +584,6 @@ classDecl               : methodHead  methodDecls '}'
                         | '.override' typeSpec '::' methodName 'with' callConv type typeSpec '::' methodName '(' sigArgs0 ')'  
                         | '.override' 'method' callConv type typeSpec '::' methodName genArity '(' sigArgs0 ')' 'with' 'method' callConv type typeSpec '::' methodName genArity '(' sigArgs0 ')' 
                         | languageDecl
-                        | compControl
                         | 'param' 'type' '[' int32 ']' 
                         | 'param' 'type' dottedName 
                         ;
@@ -691,7 +685,6 @@ eventDecl               : '.addon' methodRef
                         | extSourceSpec
                         | customAttrDecl
                         | languageDecl
-                        | compControl
                         ;
 
 /*  Property declaration  */                         
@@ -714,7 +707,6 @@ propDecl                : '.set' methodRef
                         | customAttrDecl
                         | extSourceSpec
                         | languageDecl
-                        | compControl
                         ;
 
 /*  Method declaration  */
@@ -820,7 +812,6 @@ methodDecl              : '.emitbyte' int32
                         | extSourceSpec
                         | languageDecl
                         | customAttrDecl
-                        | compControl
                         | '.export' '[' int32 ']' 
                         | '.export' '[' int32 ']' 'as' id 
                         | '.vtentry' int32 ':' int32 
@@ -1461,7 +1452,7 @@ secAction               : 'request'
 
 /*  External source declarations  */                        
 esHead                  : '.line' 
-                        | P_LINE 
+                        // | P_LINE // not supported 
                         ;
                         
 extSourceSpec           : esHead int32 SQSTRING 
@@ -1523,7 +1514,6 @@ asmOrRefDecl            : publicKeyHead bytes ')'
                         | '.locale' compQstring 
                         | localeHead bytes ')' 
                         | customAttrDecl
-                        | compControl
                         ;
 
 publicKeyHead           : '.publickey' '=' '(' 
@@ -1577,7 +1567,6 @@ exptypeDecl             : '.file' dottedName
                         | 'mdtoken' '(' int32 ')' 
                         | '.class'  int32 
                         | customAttrDecl
-                        | compControl
                         ;
 
 manifestResHead         : '.mresource' manresAttr dottedName 
@@ -1596,6 +1585,5 @@ manifestResDecls        : /* EMPTY */
 manifestResDecl         : '.file' dottedName 'at' int32 
                         | '.assembly' 'extern' dottedName 
                         | customAttrDecl
-                        | compControl
                         ;
 

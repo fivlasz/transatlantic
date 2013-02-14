@@ -622,14 +622,11 @@ WS	:	(	' '
 		|	'\t'
 		|	'\f'
 			// handle newlines
-		|	(	options {generateAmbigWarnings=false;}
-			:	"\r\n"  // Evil DOS
-			|	'\r'    // Macintosh
-			|	'\n'    // Unix (the right way)
-			)
-			{ newline(); }
+		|	"\r\n"  // Evil DOS
+		|	'\r'    // Macintosh
+		|	'\n'    // Unix (the right way)
 		)+
-		{ _ttype = Token.SKIP; }
+		{ $channel=HIDDEN; }
 	;
 
 // Single-line comments
