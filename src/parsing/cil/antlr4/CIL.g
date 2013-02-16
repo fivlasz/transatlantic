@@ -1,10 +1,5 @@
 // Common Intermediate Language (.NET) LEXER and PARSER
-grammar CIL2;
-
-@header 
-{
-  package cil;
-}
+grammar CIL;
 
 /* LEXER */
 
@@ -1586,4 +1581,3 @@ manifestResDecl         : '.file' dottedName 'at' int32
                         | '.assembly' 'extern' dottedName 
                         | customAttrDecl
                         ;
-

@@ -1,6 +1,5 @@
-// Generated from CIL2.g by ANTLR 4.0
-
-  package cil;
+// Generated from CIL.g by ANTLR 4.0
+package parsing.cil.antlr4;
 
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -12,7 +11,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class CIL2Parser extends Parser {
+public class CILParser extends Parser {
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
@@ -273,7 +272,7 @@ public class CIL2Parser extends Parser {
 	};
 
 	@Override
-	public String getGrammarFileName() { return "CIL2.g"; }
+	public String getGrammarFileName() { return "CIL.g"; }
 
 	@Override
 	public String[] getTokenNames() { return tokenNames; }
@@ -284,7 +283,7 @@ public class CIL2Parser extends Parser {
 	@Override
 	public ATN getATN() { return _ATN; }
 
-	public CIL2Parser(TokenStream input) {
+	public CILParser(TokenStream input) {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
@@ -298,11 +297,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_start; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterStart(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterStart(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitStart(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitStart(this);
 		}
 	}
 
@@ -342,11 +341,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_decls; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterDecls(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitDecls(this);
 		}
 	}
 
@@ -489,11 +488,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_decl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitDecl(this);
 		}
 	}
 
@@ -732,11 +731,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_classNameSeq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterClassNameSeq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterClassNameSeq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitClassNameSeq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitClassNameSeq(this);
 		}
 	}
 
@@ -786,7 +785,7 @@ public class CIL2Parser extends Parser {
 		public CompQstringContext compQstring() {
 			return getRuleContext(CompQstringContext.class,0);
 		}
-		public TerminalNode QSTRING() { return getToken(CIL2Parser.QSTRING, 0); }
+		public TerminalNode QSTRING() { return getToken(CILParser.QSTRING, 0); }
 		public CompQstringContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public CompQstringContext(ParserRuleContext parent, int invokingState, int _p) {
 			super(parent, invokingState);
@@ -795,11 +794,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_compQstring; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCompQstring(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCompQstring(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCompQstring(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCompQstring(this);
 		}
 	}
 
@@ -855,20 +854,20 @@ public class CIL2Parser extends Parser {
 
 	public static class LanguageDeclContext extends ParserRuleContext {
 		public TerminalNode SQSTRING(int i) {
-			return getToken(CIL2Parser.SQSTRING, i);
+			return getToken(CILParser.SQSTRING, i);
 		}
-		public List<TerminalNode> SQSTRING() { return getTokens(CIL2Parser.SQSTRING); }
+		public List<TerminalNode> SQSTRING() { return getTokens(CILParser.SQSTRING); }
 		public LanguageDeclContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_languageDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterLanguageDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterLanguageDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitLanguageDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitLanguageDecl(this);
 		}
 	}
 
@@ -921,19 +920,19 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class IdContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(CIL2Parser.ID, 0); }
-		public TerminalNode SQSTRING() { return getToken(CIL2Parser.SQSTRING, 0); }
+		public TerminalNode ID() { return getToken(CILParser.ID, 0); }
+		public TerminalNode SQSTRING() { return getToken(CILParser.SQSTRING, 0); }
 		public IdContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_id; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterId(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterId(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitId(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitId(this);
 		}
 	}
 
@@ -974,7 +973,7 @@ public class CIL2Parser extends Parser {
 		public DottedNameContext dottedName(int i) {
 			return getRuleContext(DottedNameContext.class,i);
 		}
-		public TerminalNode DOTTEDNAME() { return getToken(CIL2Parser.DOTTEDNAME, 0); }
+		public TerminalNode DOTTEDNAME() { return getToken(CILParser.DOTTEDNAME, 0); }
 		public DottedNameContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public DottedNameContext(ParserRuleContext parent, int invokingState, int _p) {
 			super(parent, invokingState);
@@ -983,11 +982,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dottedName; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterDottedName(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterDottedName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitDottedName(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitDottedName(this);
 		}
 	}
 
@@ -1055,18 +1054,18 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Int32Context extends ParserRuleContext {
-		public TerminalNode INT32() { return getToken(CIL2Parser.INT32, 0); }
+		public TerminalNode INT32() { return getToken(CILParser.INT32, 0); }
 		public Int32Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_int32; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInt32(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInt32(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInt32(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInt32(this);
 		}
 	}
 
@@ -1091,19 +1090,19 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Int64Context extends ParserRuleContext {
-		public TerminalNode INT32() { return getToken(CIL2Parser.INT32, 0); }
-		public TerminalNode INT64() { return getToken(CIL2Parser.INT64, 0); }
+		public TerminalNode INT32() { return getToken(CILParser.INT32, 0); }
+		public TerminalNode INT64() { return getToken(CILParser.INT64, 0); }
 		public Int64Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_int64; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInt64(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInt64(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInt64(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInt64(this);
 		}
 	}
 
@@ -1137,7 +1136,7 @@ public class CIL2Parser extends Parser {
 		public Int32Context int32() {
 			return getRuleContext(Int32Context.class,0);
 		}
-		public TerminalNode FLOAT64() { return getToken(CIL2Parser.FLOAT64, 0); }
+		public TerminalNode FLOAT64() { return getToken(CILParser.FLOAT64, 0); }
 		public Int64Context int64() {
 			return getRuleContext(Int64Context.class,0);
 		}
@@ -1147,11 +1146,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_float64; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFloat64(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFloat64(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFloat64(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFloat64(this);
 		}
 	}
 
@@ -1213,11 +1212,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typedef_ts; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTypedef_ts(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTypedef_ts(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTypedef_ts(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTypedef_ts(this);
 		}
 	}
 
@@ -1257,11 +1256,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typedef_t; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTypedef_t(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTypedef_t(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTypedef_t(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTypedef_t(this);
 		}
 	}
 
@@ -1301,11 +1300,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typedef_m; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTypedef_m(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTypedef_m(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTypedef_m(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTypedef_m(this);
 		}
 	}
 
@@ -1342,11 +1341,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typedef_f; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTypedef_f(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTypedef_f(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTypedef_f(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTypedef_f(this);
 		}
 	}
 
@@ -1380,11 +1379,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typedef_mr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTypedef_mr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTypedef_mr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTypedef_mr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTypedef_mr(this);
 		}
 	}
 
@@ -1424,11 +1423,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typedef_ca; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTypedef_ca(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTypedef_ca(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTypedef_ca(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTypedef_ca(this);
 		}
 	}
 
@@ -1489,11 +1488,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typedefDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTypedefDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTypedefDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTypedefDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTypedefDecl(this);
 		}
 	}
 
@@ -1565,11 +1564,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_customDescr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCustomDescr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCustomDescr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCustomDescr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCustomDescr(this);
 		}
 	}
 
@@ -1655,11 +1654,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_customDescrWithOwner; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCustomDescrWithOwner(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCustomDescrWithOwner(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCustomDescrWithOwner(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCustomDescrWithOwner(this);
 		}
 	}
 
@@ -1739,11 +1738,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_customHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCustomHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCustomHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCustomHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCustomHead(this);
 		}
 	}
 
@@ -1783,11 +1782,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_customHeadWithOwner; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCustomHeadWithOwner(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCustomHeadWithOwner(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCustomHeadWithOwner(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCustomHeadWithOwner(this);
 		}
 	}
 
@@ -1827,11 +1826,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_customType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCustomType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCustomType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCustomType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCustomType(this);
 		}
 	}
 
@@ -1868,11 +1867,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ownerType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterOwnerType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterOwnerType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitOwnerType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitOwnerType(this);
 		}
 	}
 
@@ -1921,11 +1920,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_customBlobDescr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCustomBlobDescr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCustomBlobDescr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCustomBlobDescr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCustomBlobDescr(this);
 		}
 	}
 
@@ -1966,11 +1965,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_customBlobArgs; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCustomBlobArgs(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCustomBlobArgs(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCustomBlobArgs(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCustomBlobArgs(this);
 		}
 	}
 
@@ -2047,11 +2046,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_customBlobNVPairs; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCustomBlobNVPairs(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCustomBlobNVPairs(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCustomBlobNVPairs(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCustomBlobNVPairs(this);
 		}
 	}
 
@@ -2114,11 +2113,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_fieldOrProp; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFieldOrProp(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFieldOrProp(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFieldOrProp(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFieldOrProp(this);
 		}
 	}
 
@@ -2164,11 +2163,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_customAttrDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCustomAttrDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCustomAttrDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCustomAttrDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCustomAttrDecl(this);
 		}
 	}
 
@@ -2222,7 +2221,7 @@ public class CIL2Parser extends Parser {
 		public ClassNameContext className() {
 			return getRuleContext(ClassNameContext.class,0);
 		}
-		public TerminalNode SQSTRING() { return getToken(CIL2Parser.SQSTRING, 0); }
+		public TerminalNode SQSTRING() { return getToken(CILParser.SQSTRING, 0); }
 		public SerializTypeContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public SerializTypeContext(ParserRuleContext parent, int invokingState, int _p) {
 			super(parent, invokingState);
@@ -2231,11 +2230,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_serializType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSerializType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSerializType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSerializType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSerializType(this);
 		}
 	}
 
@@ -2331,11 +2330,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_moduleHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterModuleHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterModuleHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitModuleHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitModuleHead(this);
 		}
 	}
 
@@ -2397,11 +2396,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_vtfixupDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterVtfixupDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterVtfixupDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitVtfixupDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitVtfixupDecl(this);
 		}
 	}
 
@@ -2444,11 +2443,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_vtfixupAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterVtfixupAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterVtfixupAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitVtfixupAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitVtfixupAttr(this);
 		}
 	}
 
@@ -2558,11 +2557,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_vtableDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterVtableDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterVtableDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitVtableDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitVtableDecl(this);
 		}
 	}
 
@@ -2595,11 +2594,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_vtableHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterVtableHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterVtableHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitVtableHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitVtableHead(this);
 		}
 	}
 
@@ -2635,11 +2634,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_nameSpaceHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterNameSpaceHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterNameSpaceHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitNameSpaceHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitNameSpaceHead(this);
 		}
 	}
 
@@ -2680,11 +2679,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_classHeadBegin; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterClassHeadBegin(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterClassHeadBegin(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitClassHeadBegin(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitClassHeadBegin(this);
 		}
 	}
 
@@ -2727,11 +2726,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_classHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterClassHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterClassHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitClassHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitClassHead(this);
 		}
 	}
 
@@ -2773,11 +2772,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_classAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterClassAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterClassAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitClassAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitClassAttr(this);
 		}
 	}
 
@@ -3093,11 +3092,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_extendsClause; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterExtendsClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterExtendsClause(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitExtendsClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitExtendsClause(this);
 		}
 	}
 
@@ -3145,11 +3144,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_implClause; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterImplClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterImplClause(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitImplClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitImplClause(this);
 		}
 	}
 
@@ -3202,11 +3201,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_classDecls; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterClassDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterClassDecls(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitClassDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitClassDecls(this);
 		}
 	}
 
@@ -3274,11 +3273,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_implList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterImplList(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterImplList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitImplList(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitImplList(this);
 		}
 	}
 
@@ -3342,11 +3341,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typeList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTypeList(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTypeList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTypeList(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTypeList(this);
 		}
 	}
 
@@ -3430,11 +3429,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typeListNotEmpty; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTypeListNotEmpty(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTypeListNotEmpty(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTypeListNotEmpty(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTypeListNotEmpty(this);
 		}
 	}
 
@@ -3498,11 +3497,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typarsClause; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTyparsClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTyparsClause(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTyparsClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTyparsClause(this);
 		}
 	}
 
@@ -3550,11 +3549,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typarAttrib; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTyparAttrib(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTyparAttrib(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTyparAttrib(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTyparAttrib(this);
 		}
 	}
 
@@ -3597,11 +3596,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typarAttribs; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTyparAttribs(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTyparAttribs(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTyparAttribs(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTyparAttribs(this);
 		}
 	}
 
@@ -3664,11 +3663,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typars; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTypars(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTypars(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTypars(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTypars(this);
 		}
 	}
 
@@ -3719,11 +3718,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typarsRest; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTyparsRest(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTyparsRest(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTyparsRest(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTyparsRest(this);
 		}
 	}
 
@@ -3770,11 +3769,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_tyBound; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTyBound(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTyBound(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTyBound(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTyBound(this);
 		}
 	}
 
@@ -3810,11 +3809,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_genArity; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterGenArity(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterGenArity(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitGenArity(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitGenArity(this);
 		}
 	}
 
@@ -3860,11 +3859,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_genArityNotEmpty; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterGenArityNotEmpty(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterGenArityNotEmpty(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitGenArityNotEmpty(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitGenArityNotEmpty(this);
 		}
 	}
 
@@ -3989,11 +3988,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_classDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterClassDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterClassDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitClassDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitClassDecl(this);
 		}
 	}
 
@@ -4214,11 +4213,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_fieldDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFieldDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFieldDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFieldDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFieldDecl(this);
 		}
 	}
 
@@ -4267,11 +4266,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_fieldAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFieldAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFieldAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFieldAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFieldAttr(this);
 		}
 	}
 
@@ -4484,11 +4483,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_atOpt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterAtOpt(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterAtOpt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitAtOpt(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitAtOpt(this);
 		}
 	}
 
@@ -4534,11 +4533,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_initOpt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInitOpt(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInitOpt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInitOpt(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInitOpt(this);
 		}
 	}
 
@@ -4584,11 +4583,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_repeatOpt; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterRepeatOpt(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterRepeatOpt(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitRepeatOpt(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitRepeatOpt(this);
 		}
 	}
 
@@ -4662,11 +4661,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_methodRef; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterMethodRef(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterMethodRef(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitMethodRef(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitMethodRef(this);
 		}
 	}
 
@@ -4781,11 +4780,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_callConv; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCallConv(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCallConv(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCallConv(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCallConv(this);
 		}
 	}
 
@@ -4847,11 +4846,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_callKind; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCallKind(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCallKind(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCallKind(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCallKind(this);
 		}
 	}
 
@@ -4935,11 +4934,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_mdtoken; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterMdtoken(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterMdtoken(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitMdtoken(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitMdtoken(this);
 		}
 	}
 
@@ -4997,11 +4996,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_memberRef; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterMemberRef(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterMemberRef(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitMemberRef(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitMemberRef(this);
 		}
 	}
 
@@ -5090,11 +5089,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_eventHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterEventHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterEventHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitEventHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitEventHead(this);
 		}
 	}
 
@@ -5148,11 +5147,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_eventAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterEventAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterEventAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitEventAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitEventAttr(this);
 		}
 	}
 
@@ -5235,11 +5234,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_eventDecls; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterEventDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterEventDecls(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitEventDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitEventDecls(this);
 		}
 	}
 
@@ -5310,11 +5309,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_eventDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterEventDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterEventDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitEventDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitEventDecl(this);
 		}
 	}
 
@@ -5411,11 +5410,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_propHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterPropHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterPropHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitPropHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitPropHead(this);
 		}
 	}
 
@@ -5460,11 +5459,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_propAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterPropAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterPropAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitPropAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitPropAttr(this);
 		}
 	}
 
@@ -5547,11 +5546,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_propDecls; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterPropDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterPropDecls(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitPropDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitPropDecls(this);
 		}
 	}
 
@@ -5622,11 +5621,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_propDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterPropDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterPropDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitPropDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitPropDecl(this);
 		}
 	}
 
@@ -5698,11 +5697,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_methodHeadPart1; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterMethodHeadPart1(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterMethodHeadPart1(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitMethodHeadPart1(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitMethodHeadPart1(this);
 		}
 	}
 
@@ -5736,11 +5735,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_marshalClause; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterMarshalClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterMarshalClause(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitMarshalClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitMarshalClause(this);
 		}
 	}
 
@@ -5815,11 +5814,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_methodHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterMethodHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterMethodHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitMethodHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitMethodHead(this);
 		}
 	}
 
@@ -5880,11 +5879,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_methAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterMethAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterMethAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitMethAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitMethAttr(this);
 		}
 	}
 
@@ -6183,11 +6182,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_pinvAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterPinvAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterPinvAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitPinvAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitPinvAttr(this);
 		}
 	}
 
@@ -6405,11 +6404,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_methodName; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterMethodName(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterMethodName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitMethodName(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitMethodName(this);
 		}
 	}
 
@@ -6470,11 +6469,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_paramAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterParamAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterParamAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitParamAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitParamAttr(this);
 		}
 	}
 
@@ -6585,11 +6584,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_implAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterImplAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterImplAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitImplAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitImplAttr(this);
 		}
 	}
 
@@ -6776,11 +6775,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_localsHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterLocalsHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterLocalsHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitLocalsHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitLocalsHead(this);
 		}
 	}
 
@@ -6820,11 +6819,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_methodDecls; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterMethodDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterMethodDecls(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitMethodDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitMethodDecls(this);
 		}
 	}
 
@@ -6943,11 +6942,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_methodDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterMethodDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterMethodDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitMethodDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitMethodDecl(this);
 		}
 	}
 
@@ -7187,11 +7186,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_scopeBlock; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterScopeBlock(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterScopeBlock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitScopeBlock(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitScopeBlock(this);
 		}
 	}
 
@@ -7224,11 +7223,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_scopeOpen; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterScopeOpen(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterScopeOpen(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitScopeOpen(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitScopeOpen(this);
 		}
 	}
 
@@ -7265,11 +7264,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_sehBlock; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSehBlock(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSehBlock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSehBlock(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSehBlock(this);
 		}
 	}
 
@@ -7307,11 +7306,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_sehClauses; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSehClauses(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSehClauses(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSehClauses(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSehClauses(this);
 		}
 	}
 
@@ -7373,11 +7372,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_tryBlock; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTryBlock(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTryBlock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTryBlock(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTryBlock(this);
 		}
 	}
 
@@ -7434,11 +7433,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_tryHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTryHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTryHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTryHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTryHead(this);
 		}
 	}
 
@@ -7484,11 +7483,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_sehClause; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSehClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSehClause(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSehClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSehClause(this);
 		}
 	}
 
@@ -7560,11 +7559,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_filterClause; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFilterClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFilterClause(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFilterClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFilterClause(this);
 		}
 	}
 
@@ -7617,11 +7616,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_filterHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFilterHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFilterHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFilterHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFilterHead(this);
 		}
 	}
 
@@ -7655,11 +7654,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_catchClause; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCatchClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCatchClause(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCatchClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCatchClause(this);
 		}
 	}
 
@@ -7691,11 +7690,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_finallyClause; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFinallyClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFinallyClause(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFinallyClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFinallyClause(this);
 		}
 	}
 
@@ -7726,11 +7725,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_faultClause; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFaultClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFaultClause(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFaultClause(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFaultClause(this);
 		}
 	}
 
@@ -7776,11 +7775,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_handlerBlock; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterHandlerBlock(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterHandlerBlock(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitHandlerBlock(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitHandlerBlock(this);
 		}
 	}
 
@@ -7842,11 +7841,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_dataDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterDataDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterDataDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitDataDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitDataDecl(this);
 		}
 	}
 
@@ -7884,11 +7883,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ddHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterDdHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterDdHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitDdHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitDdHead(this);
 		}
 	}
 
@@ -7935,11 +7934,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_tls; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTls(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTls(this);
 		}
 	}
 
@@ -8005,11 +8004,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ddBody; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterDdBody(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterDdBody(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitDdBody(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitDdBody(this);
 		}
 	}
 
@@ -8069,11 +8068,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ddItemList; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterDdItemList(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterDdItemList(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitDdItemList(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitDdItemList(this);
 		}
 	}
 
@@ -8121,11 +8120,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ddItemCount; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterDdItemCount(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterDdItemCount(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitDdItemCount(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitDdItemCount(this);
 		}
 	}
 
@@ -8193,11 +8192,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_ddItem; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterDdItem(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterDdItem(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitDdItem(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitDdItem(this);
 		}
 	}
 
@@ -8388,11 +8387,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_fieldSerInit; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFieldSerInit(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFieldSerInit(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFieldSerInit(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFieldSerInit(this);
 		}
 	}
 
@@ -8614,11 +8613,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_bytearrayhead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterBytearrayhead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterBytearrayhead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitBytearrayhead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitBytearrayhead(this);
 		}
 	}
 
@@ -8653,11 +8652,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_bytes; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterBytes(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterBytes(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitBytes(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitBytes(this);
 		}
 	}
 
@@ -8698,7 +8697,7 @@ public class CIL2Parser extends Parser {
 		public HexbytesContext hexbytes() {
 			return getRuleContext(HexbytesContext.class,0);
 		}
-		public TerminalNode HEXBYTE() { return getToken(CIL2Parser.HEXBYTE, 0); }
+		public TerminalNode HEXBYTE() { return getToken(CILParser.HEXBYTE, 0); }
 		public HexbytesContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public HexbytesContext(ParserRuleContext parent, int invokingState, int _p) {
 			super(parent, invokingState);
@@ -8707,11 +8706,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_hexbytes; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterHexbytes(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterHexbytes(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitHexbytes(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitHexbytes(this);
 		}
 	}
 
@@ -8777,11 +8776,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_fieldInit; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFieldInit(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFieldInit(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFieldInit(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFieldInit(this);
 		}
 	}
 
@@ -8880,18 +8879,18 @@ public class CIL2Parser extends Parser {
 		public BoolSeqContext boolSeq() {
 			return getRuleContext(BoolSeqContext.class,0);
 		}
-		public TerminalNode SQSTRING() { return getToken(CIL2Parser.SQSTRING, 0); }
+		public TerminalNode SQSTRING() { return getToken(CILParser.SQSTRING, 0); }
 		public SerInitContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_serInit; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSerInit(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSerInit(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSerInit(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSerInit(this);
 		}
 	}
 
@@ -9251,11 +9250,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_f32seq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterF32seq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterF32seq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitF32seq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitF32seq(this);
 		}
 	}
 
@@ -9341,11 +9340,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_f64seq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterF64seq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterF64seq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitF64seq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitF64seq(this);
 		}
 	}
 
@@ -9428,11 +9427,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_i64seq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterI64seq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterI64seq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitI64seq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitI64seq(this);
 		}
 	}
 
@@ -9500,11 +9499,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_i32seq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterI32seq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterI32seq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitI32seq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitI32seq(this);
 		}
 	}
 
@@ -9572,11 +9571,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_i16seq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterI16seq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterI16seq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitI16seq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitI16seq(this);
 		}
 	}
 
@@ -9644,11 +9643,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_i8seq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterI8seq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterI8seq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitI8seq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitI8seq(this);
 		}
 	}
 
@@ -9716,11 +9715,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_boolSeq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterBoolSeq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterBoolSeq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitBoolSeq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitBoolSeq(this);
 		}
 	}
 
@@ -9777,7 +9776,7 @@ public class CIL2Parser extends Parser {
 		public SqstringSeqContext sqstringSeq() {
 			return getRuleContext(SqstringSeqContext.class,0);
 		}
-		public TerminalNode SQSTRING() { return getToken(CIL2Parser.SQSTRING, 0); }
+		public TerminalNode SQSTRING() { return getToken(CILParser.SQSTRING, 0); }
 		public SqstringSeqContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public SqstringSeqContext(ParserRuleContext parent, int invokingState, int _p) {
 			super(parent, invokingState);
@@ -9786,11 +9785,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_sqstringSeq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSqstringSeq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSqstringSeq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSqstringSeq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSqstringSeq(this);
 		}
 	}
 
@@ -9865,7 +9864,7 @@ public class CIL2Parser extends Parser {
 		public ClassNameContext className() {
 			return getRuleContext(ClassNameContext.class,0);
 		}
-		public TerminalNode SQSTRING() { return getToken(CIL2Parser.SQSTRING, 0); }
+		public TerminalNode SQSTRING() { return getToken(CILParser.SQSTRING, 0); }
 		public ClassSeqContext(ParserRuleContext parent, int invokingState) { super(parent, invokingState); }
 		public ClassSeqContext(ParserRuleContext parent, int invokingState, int _p) {
 			super(parent, invokingState);
@@ -9874,11 +9873,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_classSeq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterClassSeq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterClassSeq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitClassSeq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitClassSeq(this);
 		}
 	}
 
@@ -9972,11 +9971,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_objSeq; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterObjSeq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterObjSeq(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitObjSeq(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitObjSeq(this);
 		}
 	}
 
@@ -10035,11 +10034,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_methodSpec; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterMethodSpec(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterMethodSpec(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitMethodSpec(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitMethodSpec(this);
 		}
 	}
 
@@ -10064,156 +10063,156 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_noneContext extends ParserRuleContext {
-		public TerminalNode SHR() { return getToken(CIL2Parser.SHR, 0); }
-		public TerminalNode LOCALLOC() { return getToken(CIL2Parser.LOCALLOC, 0); }
-		public TerminalNode SHL() { return getToken(CIL2Parser.SHL, 0); }
-		public TerminalNode NOP() { return getToken(CIL2Parser.NOP, 0); }
-		public TerminalNode REM_UN() { return getToken(CIL2Parser.REM_UN, 0); }
-		public TerminalNode ARGLIST() { return getToken(CIL2Parser.ARGLIST, 0); }
-		public TerminalNode ENDFINALLY() { return getToken(CIL2Parser.ENDFINALLY, 0); }
-		public TerminalNode NOT() { return getToken(CIL2Parser.NOT, 0); }
-		public TerminalNode BREAK() { return getToken(CIL2Parser.BREAK, 0); }
-		public TerminalNode LDELEM_I() { return getToken(CIL2Parser.LDELEM_I, 0); }
-		public TerminalNode LDIND_U1() { return getToken(CIL2Parser.LDIND_U1, 0); }
-		public TerminalNode LDNULL() { return getToken(CIL2Parser.LDNULL, 0); }
-		public TerminalNode LDIND_U2() { return getToken(CIL2Parser.LDIND_U2, 0); }
-		public TerminalNode LDIND_U4() { return getToken(CIL2Parser.LDIND_U4, 0); }
-		public TerminalNode RET() { return getToken(CIL2Parser.RET, 0); }
-		public TerminalNode CONV_U1() { return getToken(CIL2Parser.CONV_U1, 0); }
-		public TerminalNode CONV_OVF_I4_UN() { return getToken(CIL2Parser.CONV_OVF_I4_UN, 0); }
-		public TerminalNode CONV_OVF_I() { return getToken(CIL2Parser.CONV_OVF_I, 0); }
-		public TerminalNode CONV_U4() { return getToken(CIL2Parser.CONV_U4, 0); }
-		public TerminalNode CONV_U2() { return getToken(CIL2Parser.CONV_U2, 0); }
-		public TerminalNode POP() { return getToken(CIL2Parser.POP, 0); }
-		public TerminalNode STIND_I() { return getToken(CIL2Parser.STIND_I, 0); }
-		public TerminalNode CPBLK() { return getToken(CIL2Parser.CPBLK, 0); }
-		public TerminalNode CONV_U8() { return getToken(CIL2Parser.CONV_U8, 0); }
-		public TerminalNode CGT() { return getToken(CIL2Parser.CGT, 0); }
-		public TerminalNode LDELEM_REF() { return getToken(CIL2Parser.LDELEM_REF, 0); }
-		public TerminalNode ADD_OVF() { return getToken(CIL2Parser.ADD_OVF, 0); }
-		public TerminalNode CONV_U() { return getToken(CIL2Parser.CONV_U, 0); }
-		public TerminalNode SUB_OVF() { return getToken(CIL2Parser.SUB_OVF, 0); }
-		public TerminalNode LDLOC_3() { return getToken(CIL2Parser.LDLOC_3, 0); }
-		public TerminalNode LDLOC_1() { return getToken(CIL2Parser.LDLOC_1, 0); }
-		public TerminalNode CONV_OVF_U2_UN() { return getToken(CIL2Parser.CONV_OVF_U2_UN, 0); }
-		public TerminalNode LDLOC_2() { return getToken(CIL2Parser.LDLOC_2, 0); }
-		public TerminalNode LDLOC_0() { return getToken(CIL2Parser.LDLOC_0, 0); }
-		public TerminalNode STLOC_2() { return getToken(CIL2Parser.STLOC_2, 0); }
-		public TerminalNode LDELEM_I2() { return getToken(CIL2Parser.LDELEM_I2, 0); }
-		public TerminalNode STLOC_3() { return getToken(CIL2Parser.STLOC_3, 0); }
-		public TerminalNode LDELEM_I1() { return getToken(CIL2Parser.LDELEM_I1, 0); }
-		public TerminalNode STLOC_0() { return getToken(CIL2Parser.STLOC_0, 0); }
-		public TerminalNode LDELEM_I4() { return getToken(CIL2Parser.LDELEM_I4, 0); }
-		public TerminalNode STLOC_1() { return getToken(CIL2Parser.STLOC_1, 0); }
-		public TerminalNode LDELEM_I8() { return getToken(CIL2Parser.LDELEM_I8, 0); }
-		public TerminalNode CLT() { return getToken(CIL2Parser.CLT, 0); }
-		public TerminalNode DUP() { return getToken(CIL2Parser.DUP, 0); }
-		public TerminalNode RETHROW() { return getToken(CIL2Parser.RETHROW, 0); }
-		public TerminalNode MUL_OVF() { return getToken(CIL2Parser.MUL_OVF, 0); }
-		public TerminalNode CONV_R4() { return getToken(CIL2Parser.CONV_R4, 0); }
-		public TerminalNode STELEM_I() { return getToken(CIL2Parser.STELEM_I, 0); }
-		public TerminalNode CONV_OVF_U4_UN() { return getToken(CIL2Parser.CONV_OVF_U4_UN, 0); }
-		public TerminalNode CONV_R_UN() { return getToken(CIL2Parser.CONV_R_UN, 0); }
-		public TerminalNode MUL_OVF_UN() { return getToken(CIL2Parser.MUL_OVF_UN, 0); }
-		public TerminalNode CONV_R8() { return getToken(CIL2Parser.CONV_R8, 0); }
-		public TerminalNode DIV_UN() { return getToken(CIL2Parser.DIV_UN, 0); }
-		public TerminalNode CKFINITE() { return getToken(CIL2Parser.CKFINITE, 0); }
-		public TerminalNode LDELEM_R8() { return getToken(CIL2Parser.LDELEM_R8, 0); }
-		public TerminalNode LDIND_I2() { return getToken(CIL2Parser.LDIND_I2, 0); }
-		public TerminalNode LDIND_I1() { return getToken(CIL2Parser.LDIND_I1, 0); }
-		public TerminalNode MUL() { return getToken(CIL2Parser.MUL, 0); }
-		public TerminalNode LDIND_I4() { return getToken(CIL2Parser.LDIND_I4, 0); }
-		public TerminalNode LDELEM_R4() { return getToken(CIL2Parser.LDELEM_R4, 0); }
-		public TerminalNode SHR_UN() { return getToken(CIL2Parser.SHR_UN, 0); }
-		public TerminalNode LDIND_I8() { return getToken(CIL2Parser.LDIND_I8, 0); }
-		public TerminalNode LDC_I4_8() { return getToken(CIL2Parser.LDC_I4_8, 0); }
-		public TerminalNode CONV_OVF_U1() { return getToken(CIL2Parser.CONV_OVF_U1, 0); }
-		public TerminalNode CONV_OVF_U8() { return getToken(CIL2Parser.CONV_OVF_U8, 0); }
-		public TerminalNode LDC_I4_0() { return getToken(CIL2Parser.LDC_I4_0, 0); }
-		public TerminalNode LDC_I4_1() { return getToken(CIL2Parser.LDC_I4_1, 0); }
-		public TerminalNode LDC_I4_2() { return getToken(CIL2Parser.LDC_I4_2, 0); }
-		public TerminalNode LDC_I4_3() { return getToken(CIL2Parser.LDC_I4_3, 0); }
-		public TerminalNode CONV_OVF_U4() { return getToken(CIL2Parser.CONV_OVF_U4, 0); }
-		public TerminalNode LDC_I4_4() { return getToken(CIL2Parser.LDC_I4_4, 0); }
-		public TerminalNode SUB_OVF_UN() { return getToken(CIL2Parser.SUB_OVF_UN, 0); }
-		public TerminalNode LDC_I4_5() { return getToken(CIL2Parser.LDC_I4_5, 0); }
-		public TerminalNode OR() { return getToken(CIL2Parser.OR, 0); }
-		public TerminalNode CONV_OVF_U2() { return getToken(CIL2Parser.CONV_OVF_U2, 0); }
-		public TerminalNode CONV_OVF_U1_UN() { return getToken(CIL2Parser.CONV_OVF_U1_UN, 0); }
-		public TerminalNode LDC_I4_6() { return getToken(CIL2Parser.LDC_I4_6, 0); }
-		public TerminalNode LDC_I4_7() { return getToken(CIL2Parser.LDC_I4_7, 0); }
-		public TerminalNode LDIND_R8() { return getToken(CIL2Parser.LDIND_R8, 0); }
-		public TerminalNode CEQ() { return getToken(CIL2Parser.CEQ, 0); }
-		public TerminalNode CONV_OVF_I1_UN() { return getToken(CIL2Parser.CONV_OVF_I1_UN, 0); }
-		public TerminalNode LDIND_R4() { return getToken(CIL2Parser.LDIND_R4, 0); }
-		public TerminalNode STELEM_REF() { return getToken(CIL2Parser.STELEM_REF, 0); }
-		public TerminalNode THROW() { return getToken(CIL2Parser.THROW, 0); }
-		public TerminalNode LDLEN() { return getToken(CIL2Parser.LDLEN, 0); }
-		public TerminalNode LDIND_REF() { return getToken(CIL2Parser.LDIND_REF, 0); }
-		public TerminalNode SUB() { return getToken(CIL2Parser.SUB, 0); }
-		public TerminalNode CONV_I8() { return getToken(CIL2Parser.CONV_I8, 0); }
-		public TerminalNode LDIND_I() { return getToken(CIL2Parser.LDIND_I, 0); }
-		public TerminalNode AND() { return getToken(CIL2Parser.AND, 0); }
-		public TerminalNode INITBLK() { return getToken(CIL2Parser.INITBLK, 0); }
-		public TerminalNode CONV_I4() { return getToken(CIL2Parser.CONV_I4, 0); }
-		public TerminalNode CONV_I2() { return getToken(CIL2Parser.CONV_I2, 0); }
-		public TerminalNode CONV_I1() { return getToken(CIL2Parser.CONV_I1, 0); }
-		public TerminalNode CONV_OVF_U_UN() { return getToken(CIL2Parser.CONV_OVF_U_UN, 0); }
-		public TerminalNode STIND_REF() { return getToken(CIL2Parser.STIND_REF, 0); }
-		public TerminalNode REFANYTYPE() { return getToken(CIL2Parser.REFANYTYPE, 0); }
-		public TerminalNode CLT_UN() { return getToken(CIL2Parser.CLT_UN, 0); }
-		public TerminalNode STELEM_I8() { return getToken(CIL2Parser.STELEM_I8, 0); }
-		public TerminalNode STELEM_I2() { return getToken(CIL2Parser.STELEM_I2, 0); }
-		public TerminalNode STELEM_I4() { return getToken(CIL2Parser.STELEM_I4, 0); }
-		public TerminalNode STELEM_I1() { return getToken(CIL2Parser.STELEM_I1, 0); }
-		public TerminalNode LDELEM_U2() { return getToken(CIL2Parser.LDELEM_U2, 0); }
-		public TerminalNode LDELEM_U1() { return getToken(CIL2Parser.LDELEM_U1, 0); }
-		public TerminalNode LDELEM_U4() { return getToken(CIL2Parser.LDELEM_U4, 0); }
-		public TerminalNode ADD() { return getToken(CIL2Parser.ADD, 0); }
-		public TerminalNode CONV_OVF_I8() { return getToken(CIL2Parser.CONV_OVF_I8, 0); }
-		public TerminalNode STIND_R4() { return getToken(CIL2Parser.STIND_R4, 0); }
-		public TerminalNode XOR() { return getToken(CIL2Parser.XOR, 0); }
-		public TerminalNode ENDFAULT() { return getToken(CIL2Parser.ENDFAULT, 0); }
-		public TerminalNode STIND_R8() { return getToken(CIL2Parser.STIND_R8, 0); }
-		public TerminalNode STIND_I8() { return getToken(CIL2Parser.STIND_I8, 0); }
-		public TerminalNode STELEM_R4() { return getToken(CIL2Parser.STELEM_R4, 0); }
-		public TerminalNode CONV_OVF_I8_UN() { return getToken(CIL2Parser.CONV_OVF_I8_UN, 0); }
-		public TerminalNode VOLATILE_() { return getToken(CIL2Parser.VOLATILE_, 0); }
-		public TerminalNode CONV_OVF_I1() { return getToken(CIL2Parser.CONV_OVF_I1, 0); }
-		public TerminalNode CONV_OVF_I2() { return getToken(CIL2Parser.CONV_OVF_I2, 0); }
-		public TerminalNode STELEM_R8() { return getToken(CIL2Parser.STELEM_R8, 0); }
-		public TerminalNode CONV_OVF_I4() { return getToken(CIL2Parser.CONV_OVF_I4, 0); }
-		public TerminalNode TAIL_() { return getToken(CIL2Parser.TAIL_, 0); }
-		public TerminalNode STIND_I1() { return getToken(CIL2Parser.STIND_I1, 0); }
-		public TerminalNode STIND_I2() { return getToken(CIL2Parser.STIND_I2, 0); }
-		public TerminalNode STIND_I4() { return getToken(CIL2Parser.STIND_I4, 0); }
-		public TerminalNode CONV_OVF_U8_UN() { return getToken(CIL2Parser.CONV_OVF_U8_UN, 0); }
-		public TerminalNode CGT_UN() { return getToken(CIL2Parser.CGT_UN, 0); }
-		public TerminalNode REM() { return getToken(CIL2Parser.REM, 0); }
-		public TerminalNode CONV_OVF_U() { return getToken(CIL2Parser.CONV_OVF_U, 0); }
-		public TerminalNode LDARG_2() { return getToken(CIL2Parser.LDARG_2, 0); }
-		public TerminalNode LDARG_1() { return getToken(CIL2Parser.LDARG_1, 0); }
-		public TerminalNode LDARG_3() { return getToken(CIL2Parser.LDARG_3, 0); }
-		public TerminalNode CONV_OVF_I_UN() { return getToken(CIL2Parser.CONV_OVF_I_UN, 0); }
-		public TerminalNode ENDFILTER() { return getToken(CIL2Parser.ENDFILTER, 0); }
-		public TerminalNode NEG() { return getToken(CIL2Parser.NEG, 0); }
-		public TerminalNode CONV_OVF_I2_UN() { return getToken(CIL2Parser.CONV_OVF_I2_UN, 0); }
-		public TerminalNode ADD_OVF_UN() { return getToken(CIL2Parser.ADD_OVF_UN, 0); }
-		public TerminalNode DIV() { return getToken(CIL2Parser.DIV, 0); }
-		public TerminalNode LDARG_0() { return getToken(CIL2Parser.LDARG_0, 0); }
-		public TerminalNode CONV_I() { return getToken(CIL2Parser.CONV_I, 0); }
-		public TerminalNode LDC_I4_M1() { return getToken(CIL2Parser.LDC_I4_M1, 0); }
+		public TerminalNode SHR() { return getToken(CILParser.SHR, 0); }
+		public TerminalNode LOCALLOC() { return getToken(CILParser.LOCALLOC, 0); }
+		public TerminalNode SHL() { return getToken(CILParser.SHL, 0); }
+		public TerminalNode NOP() { return getToken(CILParser.NOP, 0); }
+		public TerminalNode REM_UN() { return getToken(CILParser.REM_UN, 0); }
+		public TerminalNode ARGLIST() { return getToken(CILParser.ARGLIST, 0); }
+		public TerminalNode ENDFINALLY() { return getToken(CILParser.ENDFINALLY, 0); }
+		public TerminalNode NOT() { return getToken(CILParser.NOT, 0); }
+		public TerminalNode BREAK() { return getToken(CILParser.BREAK, 0); }
+		public TerminalNode LDELEM_I() { return getToken(CILParser.LDELEM_I, 0); }
+		public TerminalNode LDIND_U1() { return getToken(CILParser.LDIND_U1, 0); }
+		public TerminalNode LDNULL() { return getToken(CILParser.LDNULL, 0); }
+		public TerminalNode LDIND_U2() { return getToken(CILParser.LDIND_U2, 0); }
+		public TerminalNode LDIND_U4() { return getToken(CILParser.LDIND_U4, 0); }
+		public TerminalNode RET() { return getToken(CILParser.RET, 0); }
+		public TerminalNode CONV_U1() { return getToken(CILParser.CONV_U1, 0); }
+		public TerminalNode CONV_OVF_I4_UN() { return getToken(CILParser.CONV_OVF_I4_UN, 0); }
+		public TerminalNode CONV_OVF_I() { return getToken(CILParser.CONV_OVF_I, 0); }
+		public TerminalNode CONV_U4() { return getToken(CILParser.CONV_U4, 0); }
+		public TerminalNode CONV_U2() { return getToken(CILParser.CONV_U2, 0); }
+		public TerminalNode POP() { return getToken(CILParser.POP, 0); }
+		public TerminalNode STIND_I() { return getToken(CILParser.STIND_I, 0); }
+		public TerminalNode CPBLK() { return getToken(CILParser.CPBLK, 0); }
+		public TerminalNode CONV_U8() { return getToken(CILParser.CONV_U8, 0); }
+		public TerminalNode CGT() { return getToken(CILParser.CGT, 0); }
+		public TerminalNode LDELEM_REF() { return getToken(CILParser.LDELEM_REF, 0); }
+		public TerminalNode ADD_OVF() { return getToken(CILParser.ADD_OVF, 0); }
+		public TerminalNode CONV_U() { return getToken(CILParser.CONV_U, 0); }
+		public TerminalNode SUB_OVF() { return getToken(CILParser.SUB_OVF, 0); }
+		public TerminalNode LDLOC_3() { return getToken(CILParser.LDLOC_3, 0); }
+		public TerminalNode LDLOC_1() { return getToken(CILParser.LDLOC_1, 0); }
+		public TerminalNode CONV_OVF_U2_UN() { return getToken(CILParser.CONV_OVF_U2_UN, 0); }
+		public TerminalNode LDLOC_2() { return getToken(CILParser.LDLOC_2, 0); }
+		public TerminalNode LDLOC_0() { return getToken(CILParser.LDLOC_0, 0); }
+		public TerminalNode STLOC_2() { return getToken(CILParser.STLOC_2, 0); }
+		public TerminalNode LDELEM_I2() { return getToken(CILParser.LDELEM_I2, 0); }
+		public TerminalNode STLOC_3() { return getToken(CILParser.STLOC_3, 0); }
+		public TerminalNode LDELEM_I1() { return getToken(CILParser.LDELEM_I1, 0); }
+		public TerminalNode STLOC_0() { return getToken(CILParser.STLOC_0, 0); }
+		public TerminalNode LDELEM_I4() { return getToken(CILParser.LDELEM_I4, 0); }
+		public TerminalNode STLOC_1() { return getToken(CILParser.STLOC_1, 0); }
+		public TerminalNode LDELEM_I8() { return getToken(CILParser.LDELEM_I8, 0); }
+		public TerminalNode CLT() { return getToken(CILParser.CLT, 0); }
+		public TerminalNode DUP() { return getToken(CILParser.DUP, 0); }
+		public TerminalNode RETHROW() { return getToken(CILParser.RETHROW, 0); }
+		public TerminalNode MUL_OVF() { return getToken(CILParser.MUL_OVF, 0); }
+		public TerminalNode CONV_R4() { return getToken(CILParser.CONV_R4, 0); }
+		public TerminalNode STELEM_I() { return getToken(CILParser.STELEM_I, 0); }
+		public TerminalNode CONV_OVF_U4_UN() { return getToken(CILParser.CONV_OVF_U4_UN, 0); }
+		public TerminalNode CONV_R_UN() { return getToken(CILParser.CONV_R_UN, 0); }
+		public TerminalNode MUL_OVF_UN() { return getToken(CILParser.MUL_OVF_UN, 0); }
+		public TerminalNode CONV_R8() { return getToken(CILParser.CONV_R8, 0); }
+		public TerminalNode DIV_UN() { return getToken(CILParser.DIV_UN, 0); }
+		public TerminalNode CKFINITE() { return getToken(CILParser.CKFINITE, 0); }
+		public TerminalNode LDELEM_R8() { return getToken(CILParser.LDELEM_R8, 0); }
+		public TerminalNode LDIND_I2() { return getToken(CILParser.LDIND_I2, 0); }
+		public TerminalNode LDIND_I1() { return getToken(CILParser.LDIND_I1, 0); }
+		public TerminalNode MUL() { return getToken(CILParser.MUL, 0); }
+		public TerminalNode LDIND_I4() { return getToken(CILParser.LDIND_I4, 0); }
+		public TerminalNode LDELEM_R4() { return getToken(CILParser.LDELEM_R4, 0); }
+		public TerminalNode SHR_UN() { return getToken(CILParser.SHR_UN, 0); }
+		public TerminalNode LDIND_I8() { return getToken(CILParser.LDIND_I8, 0); }
+		public TerminalNode LDC_I4_8() { return getToken(CILParser.LDC_I4_8, 0); }
+		public TerminalNode CONV_OVF_U1() { return getToken(CILParser.CONV_OVF_U1, 0); }
+		public TerminalNode CONV_OVF_U8() { return getToken(CILParser.CONV_OVF_U8, 0); }
+		public TerminalNode LDC_I4_0() { return getToken(CILParser.LDC_I4_0, 0); }
+		public TerminalNode LDC_I4_1() { return getToken(CILParser.LDC_I4_1, 0); }
+		public TerminalNode LDC_I4_2() { return getToken(CILParser.LDC_I4_2, 0); }
+		public TerminalNode LDC_I4_3() { return getToken(CILParser.LDC_I4_3, 0); }
+		public TerminalNode CONV_OVF_U4() { return getToken(CILParser.CONV_OVF_U4, 0); }
+		public TerminalNode LDC_I4_4() { return getToken(CILParser.LDC_I4_4, 0); }
+		public TerminalNode SUB_OVF_UN() { return getToken(CILParser.SUB_OVF_UN, 0); }
+		public TerminalNode LDC_I4_5() { return getToken(CILParser.LDC_I4_5, 0); }
+		public TerminalNode OR() { return getToken(CILParser.OR, 0); }
+		public TerminalNode CONV_OVF_U2() { return getToken(CILParser.CONV_OVF_U2, 0); }
+		public TerminalNode CONV_OVF_U1_UN() { return getToken(CILParser.CONV_OVF_U1_UN, 0); }
+		public TerminalNode LDC_I4_6() { return getToken(CILParser.LDC_I4_6, 0); }
+		public TerminalNode LDC_I4_7() { return getToken(CILParser.LDC_I4_7, 0); }
+		public TerminalNode LDIND_R8() { return getToken(CILParser.LDIND_R8, 0); }
+		public TerminalNode CEQ() { return getToken(CILParser.CEQ, 0); }
+		public TerminalNode CONV_OVF_I1_UN() { return getToken(CILParser.CONV_OVF_I1_UN, 0); }
+		public TerminalNode LDIND_R4() { return getToken(CILParser.LDIND_R4, 0); }
+		public TerminalNode STELEM_REF() { return getToken(CILParser.STELEM_REF, 0); }
+		public TerminalNode THROW() { return getToken(CILParser.THROW, 0); }
+		public TerminalNode LDLEN() { return getToken(CILParser.LDLEN, 0); }
+		public TerminalNode LDIND_REF() { return getToken(CILParser.LDIND_REF, 0); }
+		public TerminalNode SUB() { return getToken(CILParser.SUB, 0); }
+		public TerminalNode CONV_I8() { return getToken(CILParser.CONV_I8, 0); }
+		public TerminalNode LDIND_I() { return getToken(CILParser.LDIND_I, 0); }
+		public TerminalNode AND() { return getToken(CILParser.AND, 0); }
+		public TerminalNode INITBLK() { return getToken(CILParser.INITBLK, 0); }
+		public TerminalNode CONV_I4() { return getToken(CILParser.CONV_I4, 0); }
+		public TerminalNode CONV_I2() { return getToken(CILParser.CONV_I2, 0); }
+		public TerminalNode CONV_I1() { return getToken(CILParser.CONV_I1, 0); }
+		public TerminalNode CONV_OVF_U_UN() { return getToken(CILParser.CONV_OVF_U_UN, 0); }
+		public TerminalNode STIND_REF() { return getToken(CILParser.STIND_REF, 0); }
+		public TerminalNode REFANYTYPE() { return getToken(CILParser.REFANYTYPE, 0); }
+		public TerminalNode CLT_UN() { return getToken(CILParser.CLT_UN, 0); }
+		public TerminalNode STELEM_I8() { return getToken(CILParser.STELEM_I8, 0); }
+		public TerminalNode STELEM_I2() { return getToken(CILParser.STELEM_I2, 0); }
+		public TerminalNode STELEM_I4() { return getToken(CILParser.STELEM_I4, 0); }
+		public TerminalNode STELEM_I1() { return getToken(CILParser.STELEM_I1, 0); }
+		public TerminalNode LDELEM_U2() { return getToken(CILParser.LDELEM_U2, 0); }
+		public TerminalNode LDELEM_U1() { return getToken(CILParser.LDELEM_U1, 0); }
+		public TerminalNode LDELEM_U4() { return getToken(CILParser.LDELEM_U4, 0); }
+		public TerminalNode ADD() { return getToken(CILParser.ADD, 0); }
+		public TerminalNode CONV_OVF_I8() { return getToken(CILParser.CONV_OVF_I8, 0); }
+		public TerminalNode STIND_R4() { return getToken(CILParser.STIND_R4, 0); }
+		public TerminalNode XOR() { return getToken(CILParser.XOR, 0); }
+		public TerminalNode ENDFAULT() { return getToken(CILParser.ENDFAULT, 0); }
+		public TerminalNode STIND_R8() { return getToken(CILParser.STIND_R8, 0); }
+		public TerminalNode STIND_I8() { return getToken(CILParser.STIND_I8, 0); }
+		public TerminalNode STELEM_R4() { return getToken(CILParser.STELEM_R4, 0); }
+		public TerminalNode CONV_OVF_I8_UN() { return getToken(CILParser.CONV_OVF_I8_UN, 0); }
+		public TerminalNode VOLATILE_() { return getToken(CILParser.VOLATILE_, 0); }
+		public TerminalNode CONV_OVF_I1() { return getToken(CILParser.CONV_OVF_I1, 0); }
+		public TerminalNode CONV_OVF_I2() { return getToken(CILParser.CONV_OVF_I2, 0); }
+		public TerminalNode STELEM_R8() { return getToken(CILParser.STELEM_R8, 0); }
+		public TerminalNode CONV_OVF_I4() { return getToken(CILParser.CONV_OVF_I4, 0); }
+		public TerminalNode TAIL_() { return getToken(CILParser.TAIL_, 0); }
+		public TerminalNode STIND_I1() { return getToken(CILParser.STIND_I1, 0); }
+		public TerminalNode STIND_I2() { return getToken(CILParser.STIND_I2, 0); }
+		public TerminalNode STIND_I4() { return getToken(CILParser.STIND_I4, 0); }
+		public TerminalNode CONV_OVF_U8_UN() { return getToken(CILParser.CONV_OVF_U8_UN, 0); }
+		public TerminalNode CGT_UN() { return getToken(CILParser.CGT_UN, 0); }
+		public TerminalNode REM() { return getToken(CILParser.REM, 0); }
+		public TerminalNode CONV_OVF_U() { return getToken(CILParser.CONV_OVF_U, 0); }
+		public TerminalNode LDARG_2() { return getToken(CILParser.LDARG_2, 0); }
+		public TerminalNode LDARG_1() { return getToken(CILParser.LDARG_1, 0); }
+		public TerminalNode LDARG_3() { return getToken(CILParser.LDARG_3, 0); }
+		public TerminalNode CONV_OVF_I_UN() { return getToken(CILParser.CONV_OVF_I_UN, 0); }
+		public TerminalNode ENDFILTER() { return getToken(CILParser.ENDFILTER, 0); }
+		public TerminalNode NEG() { return getToken(CILParser.NEG, 0); }
+		public TerminalNode CONV_OVF_I2_UN() { return getToken(CILParser.CONV_OVF_I2_UN, 0); }
+		public TerminalNode ADD_OVF_UN() { return getToken(CILParser.ADD_OVF_UN, 0); }
+		public TerminalNode DIV() { return getToken(CILParser.DIV, 0); }
+		public TerminalNode LDARG_0() { return getToken(CILParser.LDARG_0, 0); }
+		public TerminalNode CONV_I() { return getToken(CILParser.CONV_I, 0); }
+		public TerminalNode LDC_I4_M1() { return getToken(CILParser.LDC_I4_M1, 0); }
 		public Instr_noneContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_none; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_none(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_none(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_none(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_none(this);
 		}
 	}
 
@@ -10244,29 +10243,29 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_varContext extends ParserRuleContext {
-		public TerminalNode LDLOC_S() { return getToken(CIL2Parser.LDLOC_S, 0); }
-		public TerminalNode LDLOC() { return getToken(CIL2Parser.LDLOC, 0); }
-		public TerminalNode STARG() { return getToken(CIL2Parser.STARG, 0); }
-		public TerminalNode LDARGA_S() { return getToken(CIL2Parser.LDARGA_S, 0); }
-		public TerminalNode STARG_S() { return getToken(CIL2Parser.STARG_S, 0); }
-		public TerminalNode STLOC_S() { return getToken(CIL2Parser.STLOC_S, 0); }
-		public TerminalNode STLOC() { return getToken(CIL2Parser.STLOC, 0); }
-		public TerminalNode LDLOCA_S() { return getToken(CIL2Parser.LDLOCA_S, 0); }
-		public TerminalNode LDLOCA() { return getToken(CIL2Parser.LDLOCA, 0); }
-		public TerminalNode LDARG_S() { return getToken(CIL2Parser.LDARG_S, 0); }
-		public TerminalNode LDARGA() { return getToken(CIL2Parser.LDARGA, 0); }
-		public TerminalNode LDARG() { return getToken(CIL2Parser.LDARG, 0); }
+		public TerminalNode LDLOC_S() { return getToken(CILParser.LDLOC_S, 0); }
+		public TerminalNode LDLOC() { return getToken(CILParser.LDLOC, 0); }
+		public TerminalNode STARG() { return getToken(CILParser.STARG, 0); }
+		public TerminalNode LDARGA_S() { return getToken(CILParser.LDARGA_S, 0); }
+		public TerminalNode STARG_S() { return getToken(CILParser.STARG_S, 0); }
+		public TerminalNode STLOC_S() { return getToken(CILParser.STLOC_S, 0); }
+		public TerminalNode STLOC() { return getToken(CILParser.STLOC, 0); }
+		public TerminalNode LDLOCA_S() { return getToken(CILParser.LDLOCA_S, 0); }
+		public TerminalNode LDLOCA() { return getToken(CILParser.LDLOCA, 0); }
+		public TerminalNode LDARG_S() { return getToken(CILParser.LDARG_S, 0); }
+		public TerminalNode LDARGA() { return getToken(CILParser.LDARGA, 0); }
+		public TerminalNode LDARG() { return getToken(CILParser.LDARG, 0); }
 		public Instr_varContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_var; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_var(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_var(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_var(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_var(this);
 		}
 	}
 
@@ -10297,20 +10296,20 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_iContext extends ParserRuleContext {
-		public TerminalNode LDC_I4_S() { return getToken(CIL2Parser.LDC_I4_S, 0); }
-		public TerminalNode UNALIGNED_() { return getToken(CIL2Parser.UNALIGNED_, 0); }
-		public TerminalNode LDC_I4() { return getToken(CIL2Parser.LDC_I4, 0); }
+		public TerminalNode LDC_I4_S() { return getToken(CILParser.LDC_I4_S, 0); }
+		public TerminalNode UNALIGNED_() { return getToken(CILParser.UNALIGNED_, 0); }
+		public TerminalNode LDC_I4() { return getToken(CILParser.LDC_I4, 0); }
 		public Instr_iContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_i; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_i(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_i(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_i(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_i(this);
 		}
 	}
 
@@ -10341,18 +10340,18 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_i8Context extends ParserRuleContext {
-		public TerminalNode LDC_I8() { return getToken(CIL2Parser.LDC_I8, 0); }
+		public TerminalNode LDC_I8() { return getToken(CILParser.LDC_I8, 0); }
 		public Instr_i8Context(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_i8; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_i8(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_i8(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_i8(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_i8(this);
 		}
 	}
 
@@ -10377,19 +10376,19 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_rContext extends ParserRuleContext {
-		public TerminalNode LDC_R4() { return getToken(CIL2Parser.LDC_R4, 0); }
-		public TerminalNode LDC_R8() { return getToken(CIL2Parser.LDC_R8, 0); }
+		public TerminalNode LDC_R4() { return getToken(CILParser.LDC_R4, 0); }
+		public TerminalNode LDC_R8() { return getToken(CILParser.LDC_R8, 0); }
 		public Instr_rContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_r; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_r(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_r(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_r(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_r(this);
 		}
 	}
 
@@ -10420,45 +10419,45 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_brtargetContext extends ParserRuleContext {
-		public TerminalNode BR() { return getToken(CIL2Parser.BR, 0); }
-		public TerminalNode BGT_UN_S() { return getToken(CIL2Parser.BGT_UN_S, 0); }
-		public TerminalNode BGE_S() { return getToken(CIL2Parser.BGE_S, 0); }
-		public TerminalNode LEAVE_S() { return getToken(CIL2Parser.LEAVE_S, 0); }
-		public TerminalNode BGT_S() { return getToken(CIL2Parser.BGT_S, 0); }
-		public TerminalNode BLT() { return getToken(CIL2Parser.BLT, 0); }
-		public TerminalNode BNE_UN() { return getToken(CIL2Parser.BNE_UN, 0); }
-		public TerminalNode BR_S() { return getToken(CIL2Parser.BR_S, 0); }
-		public TerminalNode BNE_UN_S() { return getToken(CIL2Parser.BNE_UN_S, 0); }
-		public TerminalNode BRFALSE_S() { return getToken(CIL2Parser.BRFALSE_S, 0); }
-		public TerminalNode LEAVE() { return getToken(CIL2Parser.LEAVE, 0); }
-		public TerminalNode BLE_UN() { return getToken(CIL2Parser.BLE_UN, 0); }
-		public TerminalNode BLE_UN_S() { return getToken(CIL2Parser.BLE_UN_S, 0); }
-		public TerminalNode BGT_UN() { return getToken(CIL2Parser.BGT_UN, 0); }
-		public TerminalNode BRTRUE_S() { return getToken(CIL2Parser.BRTRUE_S, 0); }
-		public TerminalNode BLE_S() { return getToken(CIL2Parser.BLE_S, 0); }
-		public TerminalNode BLT_UN() { return getToken(CIL2Parser.BLT_UN, 0); }
-		public TerminalNode BGE_UN_S() { return getToken(CIL2Parser.BGE_UN_S, 0); }
-		public TerminalNode BLT_S() { return getToken(CIL2Parser.BLT_S, 0); }
-		public TerminalNode BEQ_S() { return getToken(CIL2Parser.BEQ_S, 0); }
-		public TerminalNode BGT() { return getToken(CIL2Parser.BGT, 0); }
-		public TerminalNode BRTRUE() { return getToken(CIL2Parser.BRTRUE, 0); }
-		public TerminalNode BEQ() { return getToken(CIL2Parser.BEQ, 0); }
-		public TerminalNode BRFALSE() { return getToken(CIL2Parser.BRFALSE, 0); }
-		public TerminalNode BGE_UN() { return getToken(CIL2Parser.BGE_UN, 0); }
-		public TerminalNode BGE() { return getToken(CIL2Parser.BGE, 0); }
-		public TerminalNode BLE() { return getToken(CIL2Parser.BLE, 0); }
-		public TerminalNode BLT_UN_S() { return getToken(CIL2Parser.BLT_UN_S, 0); }
+		public TerminalNode BR() { return getToken(CILParser.BR, 0); }
+		public TerminalNode BGT_UN_S() { return getToken(CILParser.BGT_UN_S, 0); }
+		public TerminalNode BGE_S() { return getToken(CILParser.BGE_S, 0); }
+		public TerminalNode LEAVE_S() { return getToken(CILParser.LEAVE_S, 0); }
+		public TerminalNode BGT_S() { return getToken(CILParser.BGT_S, 0); }
+		public TerminalNode BLT() { return getToken(CILParser.BLT, 0); }
+		public TerminalNode BNE_UN() { return getToken(CILParser.BNE_UN, 0); }
+		public TerminalNode BR_S() { return getToken(CILParser.BR_S, 0); }
+		public TerminalNode BNE_UN_S() { return getToken(CILParser.BNE_UN_S, 0); }
+		public TerminalNode BRFALSE_S() { return getToken(CILParser.BRFALSE_S, 0); }
+		public TerminalNode LEAVE() { return getToken(CILParser.LEAVE, 0); }
+		public TerminalNode BLE_UN() { return getToken(CILParser.BLE_UN, 0); }
+		public TerminalNode BLE_UN_S() { return getToken(CILParser.BLE_UN_S, 0); }
+		public TerminalNode BGT_UN() { return getToken(CILParser.BGT_UN, 0); }
+		public TerminalNode BRTRUE_S() { return getToken(CILParser.BRTRUE_S, 0); }
+		public TerminalNode BLE_S() { return getToken(CILParser.BLE_S, 0); }
+		public TerminalNode BLT_UN() { return getToken(CILParser.BLT_UN, 0); }
+		public TerminalNode BGE_UN_S() { return getToken(CILParser.BGE_UN_S, 0); }
+		public TerminalNode BLT_S() { return getToken(CILParser.BLT_S, 0); }
+		public TerminalNode BEQ_S() { return getToken(CILParser.BEQ_S, 0); }
+		public TerminalNode BGT() { return getToken(CILParser.BGT, 0); }
+		public TerminalNode BRTRUE() { return getToken(CILParser.BRTRUE, 0); }
+		public TerminalNode BEQ() { return getToken(CILParser.BEQ, 0); }
+		public TerminalNode BRFALSE() { return getToken(CILParser.BRFALSE, 0); }
+		public TerminalNode BGE_UN() { return getToken(CILParser.BGE_UN, 0); }
+		public TerminalNode BGE() { return getToken(CILParser.BGE, 0); }
+		public TerminalNode BLE() { return getToken(CILParser.BLE, 0); }
+		public TerminalNode BLT_UN_S() { return getToken(CILParser.BLT_UN_S, 0); }
 		public Instr_brtargetContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_brtarget; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_brtarget(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_brtarget(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_brtarget(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_brtarget(this);
 		}
 	}
 
@@ -10489,23 +10488,23 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_methodContext extends ParserRuleContext {
-		public TerminalNode CALLVIRT() { return getToken(CIL2Parser.CALLVIRT, 0); }
-		public TerminalNode NEWOBJ() { return getToken(CIL2Parser.NEWOBJ, 0); }
-		public TerminalNode LDFTN() { return getToken(CIL2Parser.LDFTN, 0); }
-		public TerminalNode JMP() { return getToken(CIL2Parser.JMP, 0); }
-		public TerminalNode CALL() { return getToken(CIL2Parser.CALL, 0); }
-		public TerminalNode LDVIRTFTN() { return getToken(CIL2Parser.LDVIRTFTN, 0); }
+		public TerminalNode CALLVIRT() { return getToken(CILParser.CALLVIRT, 0); }
+		public TerminalNode NEWOBJ() { return getToken(CILParser.NEWOBJ, 0); }
+		public TerminalNode LDFTN() { return getToken(CILParser.LDFTN, 0); }
+		public TerminalNode JMP() { return getToken(CILParser.JMP, 0); }
+		public TerminalNode CALL() { return getToken(CILParser.CALL, 0); }
+		public TerminalNode LDVIRTFTN() { return getToken(CILParser.LDVIRTFTN, 0); }
 		public Instr_methodContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_method; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_method(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_method(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_method(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_method(this);
 		}
 	}
 
@@ -10536,23 +10535,23 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_fieldContext extends ParserRuleContext {
-		public TerminalNode STSFLD() { return getToken(CIL2Parser.STSFLD, 0); }
-		public TerminalNode LDSFLD() { return getToken(CIL2Parser.LDSFLD, 0); }
-		public TerminalNode LDFLD() { return getToken(CIL2Parser.LDFLD, 0); }
-		public TerminalNode LDFLDA() { return getToken(CIL2Parser.LDFLDA, 0); }
-		public TerminalNode LDSFLDA() { return getToken(CIL2Parser.LDSFLDA, 0); }
-		public TerminalNode STFLD() { return getToken(CIL2Parser.STFLD, 0); }
+		public TerminalNode STSFLD() { return getToken(CILParser.STSFLD, 0); }
+		public TerminalNode LDSFLD() { return getToken(CILParser.LDSFLD, 0); }
+		public TerminalNode LDFLD() { return getToken(CILParser.LDFLD, 0); }
+		public TerminalNode LDFLDA() { return getToken(CILParser.LDFLDA, 0); }
+		public TerminalNode LDSFLDA() { return getToken(CILParser.LDSFLDA, 0); }
+		public TerminalNode STFLD() { return getToken(CILParser.STFLD, 0); }
 		public Instr_fieldContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_field; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_field(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_field(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_field(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_field(this);
 		}
 	}
 
@@ -10583,30 +10582,30 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_typeContext extends ParserRuleContext {
-		public TerminalNode SIZEOF() { return getToken(CIL2Parser.SIZEOF, 0); }
-		public TerminalNode MKREFANY() { return getToken(CIL2Parser.MKREFANY, 0); }
-		public TerminalNode BOX() { return getToken(CIL2Parser.BOX, 0); }
-		public TerminalNode NEWARR() { return getToken(CIL2Parser.NEWARR, 0); }
-		public TerminalNode LDOBJ() { return getToken(CIL2Parser.LDOBJ, 0); }
-		public TerminalNode INITOBJ() { return getToken(CIL2Parser.INITOBJ, 0); }
-		public TerminalNode REFANYVAL() { return getToken(CIL2Parser.REFANYVAL, 0); }
-		public TerminalNode ISINST() { return getToken(CIL2Parser.ISINST, 0); }
-		public TerminalNode UNBOX() { return getToken(CIL2Parser.UNBOX, 0); }
-		public TerminalNode STOBJ() { return getToken(CIL2Parser.STOBJ, 0); }
-		public TerminalNode CPOBJ() { return getToken(CIL2Parser.CPOBJ, 0); }
-		public TerminalNode CASTCLASS() { return getToken(CIL2Parser.CASTCLASS, 0); }
-		public TerminalNode LDELEMA() { return getToken(CIL2Parser.LDELEMA, 0); }
+		public TerminalNode SIZEOF() { return getToken(CILParser.SIZEOF, 0); }
+		public TerminalNode MKREFANY() { return getToken(CILParser.MKREFANY, 0); }
+		public TerminalNode BOX() { return getToken(CILParser.BOX, 0); }
+		public TerminalNode NEWARR() { return getToken(CILParser.NEWARR, 0); }
+		public TerminalNode LDOBJ() { return getToken(CILParser.LDOBJ, 0); }
+		public TerminalNode INITOBJ() { return getToken(CILParser.INITOBJ, 0); }
+		public TerminalNode REFANYVAL() { return getToken(CILParser.REFANYVAL, 0); }
+		public TerminalNode ISINST() { return getToken(CILParser.ISINST, 0); }
+		public TerminalNode UNBOX() { return getToken(CILParser.UNBOX, 0); }
+		public TerminalNode STOBJ() { return getToken(CILParser.STOBJ, 0); }
+		public TerminalNode CPOBJ() { return getToken(CILParser.CPOBJ, 0); }
+		public TerminalNode CASTCLASS() { return getToken(CILParser.CASTCLASS, 0); }
+		public TerminalNode LDELEMA() { return getToken(CILParser.LDELEMA, 0); }
 		public Instr_typeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_type; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_type(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_type(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_type(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_type(this);
 		}
 	}
 
@@ -10637,18 +10636,18 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_stringContext extends ParserRuleContext {
-		public TerminalNode LDSTR() { return getToken(CIL2Parser.LDSTR, 0); }
+		public TerminalNode LDSTR() { return getToken(CILParser.LDSTR, 0); }
 		public Instr_stringContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_string; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_string(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_string(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_string(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_string(this);
 		}
 	}
 
@@ -10673,18 +10672,18 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_sigContext extends ParserRuleContext {
-		public TerminalNode CALLI() { return getToken(CIL2Parser.CALLI, 0); }
+		public TerminalNode CALLI() { return getToken(CILParser.CALLI, 0); }
 		public Instr_sigContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_sig; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_sig(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_sig(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_sig(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_sig(this);
 		}
 	}
 
@@ -10709,18 +10708,18 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_tokContext extends ParserRuleContext {
-		public TerminalNode LDTOKEN() { return getToken(CIL2Parser.LDTOKEN, 0); }
+		public TerminalNode LDTOKEN() { return getToken(CILParser.LDTOKEN, 0); }
 		public Instr_tokContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_tok; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_tok(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_tok(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_tok(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_tok(this);
 		}
 	}
 
@@ -10745,18 +10744,18 @@ public class CIL2Parser extends Parser {
 	}
 
 	public static class Instr_switchContext extends ParserRuleContext {
-		public TerminalNode SWITCH() { return getToken(CIL2Parser.SWITCH, 0); }
+		public TerminalNode SWITCH() { return getToken(CILParser.SWITCH, 0); }
 		public Instr_switchContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_instr_switch; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_switch(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_switch(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_switch(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_switch(this);
 		}
 	}
 
@@ -10790,11 +10789,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_instr_r_head; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr_r_head(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr_r_head(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr_r_head(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr_r_head(this);
 		}
 	}
 
@@ -10922,11 +10921,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_instr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterInstr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterInstr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitInstr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitInstr(this);
 		}
 	}
 
@@ -11163,11 +11162,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_labels; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterLabels(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterLabels(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitLabels(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitLabels(this);
 		}
 	}
 
@@ -11237,11 +11236,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_tyArgs0; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTyArgs0(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTyArgs0(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTyArgs0(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTyArgs0(this);
 		}
 	}
 
@@ -11289,11 +11288,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_tyArgs1; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTyArgs1(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTyArgs1(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTyArgs1(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTyArgs1(this);
 		}
 	}
 
@@ -11369,11 +11368,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_tyArgs2; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTyArgs2(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTyArgs2(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTyArgs2(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTyArgs2(this);
 		}
 	}
 
@@ -11437,11 +11436,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_sigArgs0; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSigArgs0(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSigArgs0(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSigArgs0(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSigArgs0(this);
 		}
 	}
 
@@ -11492,11 +11491,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_sigArgs1; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSigArgs1(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSigArgs1(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSigArgs1(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSigArgs1(this);
 		}
 	}
 
@@ -11569,11 +11568,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_sigArg; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSigArg(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSigArg(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSigArg(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSigArg(this);
 		}
 	}
 
@@ -11640,11 +11639,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_className; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterClassName(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterClassName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitClassName(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitClassName(this);
 		}
 	}
 
@@ -11765,11 +11764,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_slashedName; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSlashedName(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSlashedName(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSlashedName(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSlashedName(this);
 		}
 	}
 
@@ -11839,11 +11838,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_typeSpec; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTypeSpec(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTypeSpec(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTypeSpec(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTypeSpec(this);
 		}
 	}
 
@@ -11932,11 +11931,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_nativeType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterNativeType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterNativeType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitNativeType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitNativeType(this);
 		}
 	}
 
@@ -12391,11 +12390,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_iidParamIndex; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterIidParamIndex(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterIidParamIndex(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitIidParamIndex(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitIidParamIndex(this);
 		}
 	}
 
@@ -12447,11 +12446,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_variantType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterVariantType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterVariantType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitVariantType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitVariantType(this);
 		}
 	}
 
@@ -12852,11 +12851,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_type; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitType(this);
 		}
 	}
 
@@ -13128,11 +13127,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_simpleType; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSimpleType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSimpleType(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSimpleType(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSimpleType(this);
 		}
 	}
 
@@ -13300,11 +13299,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_bounds1; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterBounds1(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterBounds1(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitBounds1(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitBounds1(this);
 		}
 	}
 
@@ -13371,11 +13370,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_bound; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterBound(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterBound(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitBound(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitBound(this);
 		}
 	}
 
@@ -13465,11 +13464,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_secDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSecDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSecDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSecDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSecDecl(this);
 		}
 	}
 
@@ -13568,11 +13567,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_secAttrSetBlob; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSecAttrSetBlob(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSecAttrSetBlob(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSecAttrSetBlob(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSecAttrSetBlob(this);
 		}
 	}
 
@@ -13620,7 +13619,7 @@ public class CIL2Parser extends Parser {
 		public TypeSpecContext typeSpec() {
 			return getRuleContext(TypeSpecContext.class,0);
 		}
-		public TerminalNode SQSTRING() { return getToken(CIL2Parser.SQSTRING, 0); }
+		public TerminalNode SQSTRING() { return getToken(CILParser.SQSTRING, 0); }
 		public CustomBlobNVPairsContext customBlobNVPairs() {
 			return getRuleContext(CustomBlobNVPairsContext.class,0);
 		}
@@ -13630,11 +13629,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_secAttrBlob; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSecAttrBlob(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSecAttrBlob(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSecAttrBlob(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSecAttrBlob(this);
 		}
 	}
 
@@ -13689,11 +13688,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_psetHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterPsetHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterPsetHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitPsetHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitPsetHead(this);
 		}
 	}
 
@@ -13748,11 +13747,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_nameValPairs; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterNameValPairs(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterNameValPairs(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitNameValPairs(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitNameValPairs(this);
 		}
 	}
 
@@ -13803,11 +13802,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_nameValPair; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterNameValPair(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterNameValPair(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitNameValPair(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitNameValPair(this);
 		}
 	}
 
@@ -13840,11 +13839,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_truefalse; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterTruefalse(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterTruefalse(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitTruefalse(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitTruefalse(this);
 		}
 	}
 
@@ -13893,11 +13892,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_caValue; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterCaValue(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterCaValue(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitCaValue(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitCaValue(this);
 		}
 	}
 
@@ -14003,11 +14002,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_secAction; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterSecAction(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterSecAction(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitSecAction(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitSecAction(this);
 		}
 	}
 
@@ -14044,11 +14043,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_esHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterEsHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterEsHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitEsHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitEsHead(this);
 		}
 	}
 
@@ -14079,8 +14078,8 @@ public class CIL2Parser extends Parser {
 		public List<Int32Context> int32() {
 			return getRuleContexts(Int32Context.class);
 		}
-		public TerminalNode QSTRING() { return getToken(CIL2Parser.QSTRING, 0); }
-		public TerminalNode SQSTRING() { return getToken(CIL2Parser.SQSTRING, 0); }
+		public TerminalNode QSTRING() { return getToken(CILParser.QSTRING, 0); }
+		public TerminalNode SQSTRING() { return getToken(CILParser.SQSTRING, 0); }
 		public EsHeadContext esHead() {
 			return getRuleContext(EsHeadContext.class,0);
 		}
@@ -14090,11 +14089,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_extSourceSpec; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterExtSourceSpec(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterExtSourceSpec(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitExtSourceSpec(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitExtSourceSpec(this);
 		}
 	}
 
@@ -14267,11 +14266,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_fileDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFileDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFileDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFileDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFileDecl(this);
 		}
 	}
 
@@ -14330,11 +14329,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_fileAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFileAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFileAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFileAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFileAttr(this);
 		}
 	}
 
@@ -14393,11 +14392,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_fileEntry; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterFileEntry(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterFileEntry(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitFileEntry(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitFileEntry(this);
 		}
 	}
 
@@ -14439,11 +14438,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_hashHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterHashHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterHashHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitHashHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitHashHead(this);
 		}
 	}
 
@@ -14482,11 +14481,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assemblyHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterAssemblyHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterAssemblyHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitAssemblyHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitAssemblyHead(this);
 		}
 	}
 
@@ -14525,11 +14524,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_asmAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterAsmAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterAsmAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitAsmAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitAsmAttr(this);
 		}
 	}
 
@@ -14653,11 +14652,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assemblyDecls; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterAssemblyDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterAssemblyDecls(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitAssemblyDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitAssemblyDecls(this);
 		}
 	}
 
@@ -14725,11 +14724,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assemblyDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterAssemblyDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterAssemblyDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitAssemblyDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitAssemblyDecl(this);
 		}
 	}
 
@@ -14789,11 +14788,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_intOrWildcard; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterIntOrWildcard(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterIntOrWildcard(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitIntOrWildcard(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitIntOrWildcard(this);
 		}
 	}
 
@@ -14858,11 +14857,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_asmOrRefDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterAsmOrRefDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterAsmOrRefDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitAsmOrRefDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitAsmOrRefDecl(this);
 		}
 	}
 
@@ -14938,11 +14937,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_publicKeyHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterPublicKeyHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterPublicKeyHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitPublicKeyHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitPublicKeyHead(this);
 		}
 	}
 
@@ -14975,11 +14974,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_publicKeyTokenHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterPublicKeyTokenHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterPublicKeyTokenHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitPublicKeyTokenHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitPublicKeyTokenHead(this);
 		}
 	}
 
@@ -15012,11 +15011,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_localeHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterLocaleHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterLocaleHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitLocaleHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitLocaleHead(this);
 		}
 	}
 
@@ -15058,11 +15057,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assemblyRefHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterAssemblyRefHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterAssemblyRefHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitAssemblyRefHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitAssemblyRefHead(this);
 		}
 	}
 
@@ -15122,11 +15121,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assemblyRefDecls; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterAssemblyRefDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterAssemblyRefDecls(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitAssemblyRefDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitAssemblyRefDecls(this);
 		}
 	}
 
@@ -15197,11 +15196,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_assemblyRefDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterAssemblyRefDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterAssemblyRefDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitAssemblyRefDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitAssemblyRefDecl(this);
 		}
 	}
 
@@ -15271,11 +15270,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_exptypeHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterExptypeHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterExptypeHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitExptypeHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitExptypeHead(this);
 		}
 	}
 
@@ -15315,11 +15314,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_exportHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterExportHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterExportHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitExportHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitExportHead(this);
 		}
 	}
 
@@ -15358,11 +15357,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_exptAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterExptAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterExptAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitExptAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitExptAttr(this);
 		}
 	}
 
@@ -15521,11 +15520,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_exptypeDecls; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterExptypeDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterExptypeDecls(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitExptypeDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitExptypeDecls(this);
 		}
 	}
 
@@ -15596,11 +15595,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_exptypeDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterExptypeDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterExptypeDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitExptypeDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitExptypeDecl(this);
 		}
 	}
 
@@ -15689,11 +15688,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_manifestResHead; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterManifestResHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterManifestResHead(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitManifestResHead(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitManifestResHead(this);
 		}
 	}
 
@@ -15748,11 +15747,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_manresAttr; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterManresAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterManresAttr(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitManresAttr(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitManresAttr(this);
 		}
 	}
 
@@ -15835,11 +15834,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_manifestResDecls; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterManifestResDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterManifestResDecls(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitManifestResDecls(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitManifestResDecls(this);
 		}
 	}
 
@@ -15907,11 +15906,11 @@ public class CIL2Parser extends Parser {
 		@Override public int getRuleIndex() { return RULE_manifestResDecl; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).enterManifestResDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).enterManifestResDecl(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CIL2Listener ) ((CIL2Listener)listener).exitManifestResDecl(this);
+			if ( listener instanceof CILListener ) ((CILListener)listener).exitManifestResDecl(this);
 		}
 	}
 

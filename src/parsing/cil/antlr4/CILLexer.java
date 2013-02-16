@@ -1,6 +1,5 @@
-// Generated from CIL2.g by ANTLR 4.0
-
-  package cil;
+// Generated from CIL.g by ANTLR 4.0
+package parsing.cil.antlr4;
 
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
@@ -12,7 +11,7 @@ import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.misc.*;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
-public class CIL2Lexer extends Lexer {
+public class CILLexer extends Lexer {
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
@@ -260,13 +259,13 @@ public class CIL2Lexer extends Lexer {
 	};
 
 
-	public CIL2Lexer(CharStream input) {
+	public CILLexer(CharStream input) {
 		super(input);
 		_interp = new LexerATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
 
 	@Override
-	public String getGrammarFileName() { return "CIL2.g"; }
+	public String getGrammarFileName() { return "CIL.g"; }
 
 	@Override
 	public String[] getTokenNames() { return tokenNames; }
