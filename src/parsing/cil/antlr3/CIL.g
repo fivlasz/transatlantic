@@ -2,9 +2,9 @@
 grammar CIL;
 
 options {
-backtrack=true;
-output=AST;
-ASTLabelType=CommonTree;
+  backtrack=true;
+  output=AST;
+  ASTLabelType=CommonTree;
 }
 
 /* LEXER */
