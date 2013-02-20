@@ -51,16 +51,16 @@ classNameSeq            : /* EMPTY */
 compQstring             : (QSTRING) ('+' QSTRING)* 
                         ;
 
-languageDecl            : '.language'^ SQSTRING 
-                        | '.language'^ SQSTRING ',' SQSTRING 
-                        | '.language'^ SQSTRING ',' SQSTRING ',' SQSTRING 
+languageDecl            : '.language'! SQSTRING 
+                        | '.language'! SQSTRING ','! SQSTRING 
+                        | '.language'! SQSTRING ','! SQSTRING ','! SQSTRING 
                         ;
 /*  Basic tokens  */                        
 id                      : ID 
                         | SQSTRING 
                         ;
 
-dottedName              : (id | DOTTEDNAME) ('.' dottedName)* 
+dottedName              : (id^ | DOTTEDNAME^) ('.'! dottedName^)* 
                         ;
 
 int32                   : INT32 
@@ -71,18 +71,18 @@ int64                   : //INT64
                         ;
 
 float64                 : FLOAT64 
-                        | 'float32' '(' int32 ')' 
-                        | 'float64' '(' int64 ')' 
+                        | 'float32' '('! int32 ')'! 
+                        | 'float64' '('! int64 ')'! 
                         ;
 
 /*  Aliasing of types, type specs, methods, fields and custom attributes */
-typedef_ts              : '.typedef' type 'as' dottedName ;
-typedef_t               : '.typedef' className 'as' dottedName ;
-typedef_m               : '.typedef' memberRef 'as' dottedName ;
+typedef_ts              : '.typedef'! type 'as'! dottedName ;
+typedef_t               : '.typedef'! className 'as'! dottedName ;
+typedef_m               : '.typedef'! memberRef 'as'! dottedName ;
 typedef_f               : typedef_m ;
 typedef_mr              : typedef_m ;
-typedef_ca              : '.typedef' customDescr 'as' dottedName 
-                        | '.typedef' customDescrWithOwner 'as' dottedName
+typedef_ca              : '.typedef'! customDescr 'as'! dottedName 
+                        | '.typedef'! customDescrWithOwner 'as'! dottedName
                         ;
 typedefDecl             : typedef_ts 
                         | typedef_t 
@@ -90,14 +90,14 @@ typedefDecl             : typedef_ts
                         | typedef_ca 
                         ;
 /* Custom attribute declarations  */
-customDescr             : '.custom' customType 
-                        | '.custom' customType '=' compQstring 
-                        | '.custom' customType '=' '{' customBlobDescr '}' 
-                        | customHead bytes ')' 
+customDescr             : '.custom'! customType 
+                        | '.custom' customType '=' compQstring -> ^(customType compQstring) 
+                        | '.custom' customType '=' '{' customBlobDescr '}' -> ^(customType customBlobDescr) 
+                        | customHead bytes ')' -> ^(customHead bytes) 
                         ;
 
 customDescrWithOwner    : '.custom' '(' ownerType ')' customType 
-                        | '.custom' '(' ownerType ')' customType '=' compQstring 
+                        | '.custom'! '('! ownerType ')'! customType '='! compQstring 
                         | '.custom' '(' ownerType ')' customType '=' '{' customBlobDescr '}' 
                         | customHeadWithOwner bytes ')' 
                         ;
