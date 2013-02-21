@@ -7,10 +7,7 @@ options {
   rewrite      = true; // rewrites a tree
 }
 
-tokens {
-  FILEALIGNMENT;
-}
-
+/* PARSER */
 start           : decls
                 ;      
 
@@ -33,14 +30,14 @@ decl                    : classHead '{'! classDecls '}'!
                         | moduleHead
                         | secDecl
                         | customAttrDecl
-                        | '.subsystem'^ int32 
-                        | '.corflags'^ int32 
-                        | '.file' 'alignment' int32 -> ^(FILEALIGNMENT int32) 
-                        | '.imagebase'^ int64 
-                        | '.stackreserve'^ int64 
+                        | '.subsystem' int32 
+                        | '.corflags' int32 
+                        | '.file' 'alignment' int32 
+                        | '.imagebase' int64 
+                        | '.stackreserve' int64 
                         | languageDecl
                         | typedefDecl
-                        | '.typelist'^ '{'! classNameSeq '}'!
+                        | '.typelist' '{'! classNameSeq '}'! 
                         | '.mscorlib' 
                         ;
                         
@@ -48,7 +45,7 @@ classNameSeq            : /* EMPTY */
                         | className classNameSeq
                         ;                        
 
-compQstring             : (QSTRING) ('+' QSTRING)* 
+compQstring             : (QSTRING) ('+'^ QSTRING)* 
                         ;
 
 languageDecl            : '.language'! SQSTRING 
@@ -60,7 +57,7 @@ id                      : ID
                         | SQSTRING 
                         ;
 
-dottedName              : (id^ | DOTTEDNAME^) ('.'! dottedName^)* 
+dottedName              : (id | DOTTEDNAME) ('.'! dottedName)* 
                         ;
 
 int32                   : INT32 
@@ -91,21 +88,21 @@ typedefDecl             : typedef_ts
                         ;
 /* Custom attribute declarations  */
 customDescr             : '.custom'! customType 
-                        | '.custom' customType '=' compQstring -> ^(customType compQstring) 
-                        | '.custom' customType '=' '{' customBlobDescr '}' -> ^(customType customBlobDescr) 
-                        | customHead bytes ')' -> ^(customHead bytes) 
+                        | '.custom'! customType '='! compQstring 
+                        | '.custom'! customType '='! '{'! customBlobDescr '}'! 
+                        | customHead bytes ')'! 
                         ;
 
-customDescrWithOwner    : '.custom' '(' ownerType ')' customType 
+customDescrWithOwner    : '.custom'! '('! ownerType ')'! customType 
                         | '.custom'! '('! ownerType ')'! customType '='! compQstring 
-                        | '.custom' '(' ownerType ')' customType '=' '{' customBlobDescr '}' 
-                        | customHeadWithOwner bytes ')' 
+                        | '.custom'! '('! ownerType ')'! customType '='! '{'! customBlobDescr '}'! 
+                        | customHeadWithOwner bytes ')'! 
                         ;
                         
-customHead              : '.custom' customType '=' '(' 
+customHead              : '.custom'! customType '='! '('! 
                         ;
 
-customHeadWithOwner     : '.custom' '(' ownerType ')' customType '=' '(' 
+customHeadWithOwner     : '.custom'! '('! ownerType ')'! customType '='! '('! 
                         ;
 
 customType              : methodRef 
@@ -122,7 +119,7 @@ customBlobDescr         : customBlobArgs customBlobNVPairs
 customBlobArgs          : (/* EMPTY */) (serInit)* 
                         ;
                         
-customBlobNVPairs       : (/* EMPTY */) (fieldOrProp serializType dottedName '=' serInit)* 
+customBlobNVPairs       : (/* EMPTY */) (fieldOrProp serializType dottedName '='! serInit)* 
                         ;
 
 fieldOrProp             : 'field' 
@@ -134,52 +131,52 @@ customAttrDecl          : customDescr
                         | typedef_ca 
                         ;
                         
-serializType            : (simpleType | 'type' | 'object' | 'enum' 'class' SQSTRING | 'enum' className) ('[' ']' )*
+serializType            : (simpleType | 'type' | 'object' | 'enum' 'class' SQSTRING | 'enum' className) ('['! ']'! )*
                                  ;
 
                         
 /*  Module declaration */
-moduleHead              : '.module' 
-                        | '.module' dottedName 
-                        | '.module' 'extern' dottedName 
+moduleHead              : '.module'! 
+                        | '.module'! dottedName 
+                        | '.module'! 'extern' dottedName 
                         ;
                         
 /*  VTable Fixup table declaration  */
-vtfixupDecl             : '.vtfixup' '[' int32 ']' vtfixupAttr 'at' id 
+vtfixupDecl             : '.vtfixup'! '['! int32 ']'! vtfixupAttr 'at'! id 
                         ;
 
 vtfixupAttr             : (/* EMPTY */) ('int32' | 'int64' | 'fromunmanaged' | 'callmostderived' | 'retainappdomain')* 
                         ;
 
-vtableDecl              : vtableHead bytes ')'   /* deprecated */ 
+vtableDecl              : vtableHead bytes ')'!   /* deprecated */ 
                         ;
 
-vtableHead              : '.vtable' '=' '('        /* deprecated */ 
+vtableHead              : '.vtable'! '='! '('!        /* deprecated */ 
                         ;
 
 /*  Namespace and class declaration  */                         
-nameSpaceHead           : '.namespace' dottedName 
+nameSpaceHead           : '.namespace'! dottedName 
                         ;
-classHeadBegin          : '.class' classAttr dottedName typarsClause 
+classHeadBegin          : '.class'! classAttr dottedName typarsClause 
                         ;
 classHead               : classHeadBegin extendsClause implClause 
                         ;
 
-classAttr               : (/* EMPTY */) ('public' | 'private' | 'value' | 'enum' | 'interface' | 'sealed' | 'abstract' | 'auto' | 'sequential' | 'explicit' | 'ansi' | 'unicode' | 'autochar' | 'import' | 'serializable' | 'nested' 'public' | 'nested' 'private' | 'nested' 'family' | 'nested' 'assembly' | 'nested' 'famandassem' | 'nested' 'famorassem' | 'beforefieldinit' | 'specialname' | 'rtspecialname' | 'flags' '(' int32 ')')* 
+classAttr               : (/* EMPTY */) ('public' | 'private' | 'value' | 'enum' | 'interface' | 'sealed' | 'abstract' | 'auto' | 'sequential' | 'explicit' | 'ansi' | 'unicode' | 'autochar' | 'import' | 'serializable' | 'nested' 'public' | 'nested' 'private' | 'nested' 'family' | 'nested' 'assembly' | 'nested' 'famandassem' | 'nested' 'famorassem' | 'beforefieldinit' | 'specialname' | 'rtspecialname' | 'flags' '('! int32 ')'!)* 
                         ;
 
 extendsClause           : /* EMPTY */                                           
-                        | 'extends' typeSpec 
+                        | 'extends'! typeSpec 
                         ;
 
 implClause              : /* EMPTY */
-                        | 'implements' implList
+                        | 'implements'! implList
                         ;
 
 classDecls              : (/* EMPTY */) (classDecl)*
                         ;
                         
-implList                : (typeSpec) (',' typeSpec)*
+implList                : (typeSpec) (','! typeSpec)*
                               ;
 
 /* Generic type parameters declaration  */                         
@@ -187,11 +184,11 @@ typeList                : /* EMPTY */
                         | typeListNotEmpty 
                         ;
                         
-typeListNotEmpty        : (typeSpec) (',' typeSpec)* 
+typeListNotEmpty        : (typeSpec) (','! typeSpec)* 
                         ;
 
 typarsClause            : /* EMPTY */ 
-                        | '<' typars '>' 
+                        | '<'! typars '>'! 
                         ;
 
 typarAttrib             : '+' 
@@ -210,24 +207,24 @@ typars                  : typarAttribs tyBound dottedName typarsRest
                         ;
 
 typarsRest              : /* EMPTY */ 
-                        | ',' typars 
+                        | ','! typars 
                         ;
 
-tyBound                 : '(' typeList ')' 
+tyBound                 : '('! typeList ')'! 
                         ;
                         
 genArity                : /* EMPTY */ 
                         | genArityNotEmpty 
                         ;                        
 
-genArityNotEmpty        : '<' '[' int32 ']' '>' 
+genArityNotEmpty        : '<'! '['! int32 ']'! '>'! 
                         ;
 
 /*  Class body declarations  */                         
-classDecl               : methodHead  methodDecls '}' 
-                        | classHead '{' classDecls '}' 
-                        | eventHead '{' eventDecls '}' 
-                        | propHead '{' propDecls '}' 
+classDecl               : methodHead  methodDecls '}'! 
+                        | classHead '{'! classDecls '}'! 
+                        | eventHead '{'! eventDecls '}'! 
+                        | propHead '{'! propDecls '}'! 
                         | fieldDecl
                         | dataDecl
                         | secDecl
@@ -235,16 +232,16 @@ classDecl               : methodHead  methodDecls '}'
                         | customAttrDecl
                         | '.size' int32 
                         | '.pack' int32 
-                        | exportHead '{' exptypeDecls '}' 
-                        | '.override' typeSpec '::' methodName 'with' callConv type typeSpec '::' methodName '(' sigArgs0 ')'  
-                        | '.override' 'method' callConv type typeSpec '::' methodName genArity '(' sigArgs0 ')' 'with' 'method' callConv type typeSpec '::' methodName genArity '(' sigArgs0 ')' 
+                        | exportHead '{'! exptypeDecls '}'! 
+                        | '.override' typeSpec '::'! methodName 'with'! callConv type typeSpec '::'! methodName '('! sigArgs0 ')'!  
+                        | '.override' 'method' callConv type typeSpec '::'! methodName genArity '('! sigArgs0 ')'! 'with'! 'method'! callConv type typeSpec '::'! methodName genArity '('! sigArgs0 ')'! 
                         | languageDecl
-                        | 'param' 'type' '[' int32 ']' 
+                        | 'param' 'type' '['! int32 ']'! 
                         | 'param' 'type' dottedName 
                         ;
 
 /*  Field declaration  */                        
-fieldDecl               : '.field' repeatOpt fieldAttr type dottedName atOpt initOpt 
+fieldDecl               : '.field'! repeatOpt fieldAttr type dottedName atOpt initOpt 
                         ;
 
 fieldAttr               : (/* EMPTY */) ('static' | 'public' | 'private' | 'family' | 'initonly' | 'rtspecialname'  /**/ | 'specialname' 
@@ -252,26 +249,26 @@ fieldAttr               : (/* EMPTY */) ('static' | 'public' | 'private' | 'fami
                         | fieldAttr 'pinvokeimpl' '(' compQstring 'as' compQstring pinvAttr ')' 
                         | fieldAttr 'pinvokeimpl' '(' compQstring  pinvAttr ')' 
                         | fieldAttr 'pinvokeimpl' '(' pinvAttr ')' 
-                                                </STRIP>*/ | 'marshal' '(' nativeType ')' | 'assembly' | 'famandassem' | 'famorassem' | 'privatescope' | 'literal' | 'notserialized' | 'flags' '(' int32 ')')* 
+                                                </STRIP>*/ | 'marshal' '('! nativeType ')'! | 'assembly' | 'famandassem' | 'famorassem' | 'privatescope' | 'literal' | 'notserialized' | 'flags' '('! int32 ')'!)* 
                         ;
 
 atOpt                   : /* EMPTY */  
-                        | 'at' id 
+                        | 'at'! id 
                         ;
 
 initOpt                 : /* EMPTY */ 
-                        | '=' fieldInit 
+                        | '='! fieldInit 
                                                 ;
 
 repeatOpt               : /* EMPTY */ 
-                        | '[' int32 ']' 
+                        | '['! int32 ']'! 
                                                 ;
 
 /*  Method referencing  */
-methodRef               : callConv type typeSpec '::' methodName tyArgs0 '(' sigArgs0 ')' 
-                        | callConv type typeSpec '::' methodName genArityNotEmpty '(' sigArgs0 ')' 
-                        | callConv type methodName tyArgs0 '(' sigArgs0 ')' 
-                        | callConv type methodName genArityNotEmpty '(' sigArgs0 ')' 
+methodRef               : callConv type typeSpec '::'! methodName tyArgs0 '('! sigArgs0 ')'! 
+                        | callConv type typeSpec '::'! methodName genArityNotEmpty '('! sigArgs0 ')'! 
+                        | callConv type methodName tyArgs0 '('! sigArgs0 ')'! 
+                        | callConv type methodName genArityNotEmpty '('! sigArgs0 ')'! 
                         | mdtoken 
                         | typedef_m                                                              
                         | typedef_mr                                                              
@@ -280,7 +277,7 @@ methodRef               : callConv type typeSpec '::' methodName tyArgs0 '(' sig
 callConv                : 'instance' callConv 
                         | 'explicit' callConv 
                         | callKind 
-                        | 'callconv' '(' int32 ')' 
+                        | 'callconv' '('! int32 ')'! 
                         ;
 
 callKind                : /* EMPTY */ 
@@ -292,11 +289,11 @@ callKind                : /* EMPTY */
                         | 'unmanaged' 'fastcall' 
                         ;
 
-mdtoken                 : 'mdtoken' '(' int32 ')' 
+mdtoken                 : 'mdtoken'! '('! int32 ')'! 
                         ;
 
 memberRef               : methodSpec methodRef 
-                        | 'field' type typeSpec '::' dottedName 
+                        | 'field' type typeSpec '::'! dottedName 
                         | 'field' type dottedName 
                         | 'field' typedef_f 
                         | 'field' typedef_mr 
@@ -304,8 +301,8 @@ memberRef               : methodSpec methodRef
                         ;
 
 /*  Event declaration  */                        
-eventHead               : '.event' eventAttr typeSpec dottedName 
-                        | '.event' eventAttr dottedName 
+eventHead               : '.event'! eventAttr typeSpec dottedName 
+                        | '.event'! eventAttr dottedName 
                         ;
 
 
@@ -325,7 +322,7 @@ eventDecl               : '.addon' methodRef
                         ;
 
 /*  Property declaration  */                         
-propHead                : '.property' propAttr callConv type dottedName '(' sigArgs0 ')' initOpt 
+propHead                : '.property'! propAttr callConv type dottedName '('! sigArgs0 ')'! initOpt 
                         ;
 
 propAttr                : (/* EMPTY */) ('rtspecialname' /**/ | 'specialname')* 
@@ -344,20 +341,20 @@ propDecl                : '.set' methodRef
                         ;
 
 /*  Method declaration  */
-methodHeadPart1         : '.method' 
+methodHeadPart1         : '.method'! 
                         ;
                         
 marshalClause           : /* EMPTY */ 
-                        | 'marshal' '(' nativeType ')' 
+                        | 'marshal'! '('! nativeType ')'! 
                         ;
 
-methodHead              : methodHeadPart1 methAttr callConv paramAttr type marshalClause methodName typarsClause'(' sigArgs0 ')' implAttr '{' 
+methodHead              : methodHeadPart1 methAttr callConv paramAttr type marshalClause methodName typarsClause '('! sigArgs0 ')'! implAttr '{'! 
                         ;
 
-methAttr                : (/* EMPTY */) ('static' | 'public' | 'private' | 'family' | 'final' | 'specialname' | 'virtual' | 'strict' | 'abstract' | 'assembly' | 'famandassem' | 'famorassem' | 'privatescope' | 'hidebysig' | 'newslot' | 'rtspecialname' /**/ | 'unmanagedexp' | 'reqsecobj' | 'flags' '(' int32 ')' | 'pinvokeimpl' '(' compQstring 'as' compQstring pinvAttr ')' | 'pinvokeimpl' '(' compQstring  pinvAttr ')' | 'pinvokeimpl' '(' pinvAttr ')')* 
+methAttr                : (/* EMPTY */) ('static' | 'public' | 'private' | 'family' | 'final' | 'specialname' | 'virtual' | 'strict' | 'abstract' | 'assembly' | 'famandassem' | 'famorassem' | 'privatescope' | 'hidebysig' | 'newslot' | 'rtspecialname' /**/ | 'unmanagedexp' | 'reqsecobj' | 'flags' '('! int32 ')'! | 'pinvokeimpl' '('! compQstring 'as'! compQstring pinvAttr ')'! | 'pinvokeimpl' '('! compQstring  pinvAttr ')'! | 'pinvokeimpl' '('! pinvAttr ')'!)* 
                         ;
 
-pinvAttr                : (/* EMPTY */) ('nomangle' | 'ansi' | 'unicode' | 'autochar' | 'lasterr' | 'winapi' | 'cdecl' | 'stdcall' | 'thiscall' | 'fastcall' | 'bestfit' ':' 'on' | 'bestfit' ':' 'off' | 'charmaperror' ':' 'on' | 'charmaperror' ':' 'off' | 'flags' '(' int32 ')')* 
+pinvAttr                : (/* EMPTY */) ('nomangle' | 'ansi' | 'unicode' | 'autochar' | 'lasterr' | 'winapi' | 'cdecl' | 'stdcall' | 'thiscall' | 'fastcall' | 'bestfit' ':'! 'on' | 'bestfit' ':'! 'off' | 'charmaperror' ':'! 'on' | 'charmaperror' ':'! 'off' | 'flags' '('! int32 ')'!)* 
                         ;
 
 methodName              : '.ctor' 
@@ -365,13 +362,13 @@ methodName              : '.ctor'
                         | dottedName 
                         ;
 
-paramAttr               : (/* EMPTY */) ('[' 'in' ']' | '[' 'out' ']' | '[' 'opt' ']' | '[' int32 ']')*  
+paramAttr               : (/* EMPTY */) ('['! 'in' ']'! | '['! 'out' ']'! | '['! 'opt' ']'! | '['! int32 ']'!)*  
                         ;
         
-implAttr                : (/* EMPTY */) ('native' | 'cil' | 'optil' | 'managed' | 'unmanaged' | 'forwardref' | 'preservesig' | 'runtime' | 'internalcall' | 'synchronized' | 'noinlining' | 'nooptimization' | 'flags' '(' int32 ')')* 
+implAttr                : (/* EMPTY */) ('native' | 'cil' | 'optil' | 'managed' | 'unmanaged' | 'forwardref' | 'preservesig' | 'runtime' | 'internalcall' | 'synchronized' | 'noinlining' | 'nooptimization' | 'flags' '('! int32 ')'!)* 
                         ;
 
-localsHead              : '.locals' 
+localsHead              : '.locals'! 
                         ;
 
 methodDecls             : (/* EMPTY */) (methodDecl)*
@@ -380,33 +377,33 @@ methodDecls             : (/* EMPTY */) (methodDecl)*
 methodDecl              : '.emitbyte' int32 
                         | sehBlock 
                         | '.maxstack' int32 
-                        | localsHead '(' sigArgs0 ')' 
-                        | localsHead 'init' '(' sigArgs0 ')' 
+                        | localsHead '('! sigArgs0 ')'! 
+                        | localsHead 'init' '('! sigArgs0 ')'! 
                         | '.entrypoint' 
                         | '.zeroinit' 
                         | dataDecl
                         | instr
-                        | id ':' 
+                        | id ':'! 
                         | secDecl
                         | extSourceSpec
                         | languageDecl
                         | customAttrDecl
-                        | '.export' '[' int32 ']' 
-                        | '.export' '[' int32 ']' 'as' id 
-                        | '.vtentry' int32 ':' int32 
-                        | '.override' typeSpec '::' methodName 
+                        | '.export' '['! int32 ']'! 
+                        | '.export' '['! int32 ']'! 'as'! id 
+                        | '.vtentry' int32 ':'! int32 
+                        | '.override' typeSpec '::'! methodName 
 
-                        | '.override' 'method' callConv type typeSpec '::' methodName genArity '(' sigArgs0 ')' 
+                        | '.override' 'method' callConv type typeSpec '::'! methodName genArity '('! sigArgs0 ')'! 
                         | scopeBlock
-                        | 'param' 'type' '[' int32 ']' 
+                        | 'param' 'type' '['! int32 ']'! 
                         | 'param' 'type' dottedName 
-                        | 'param' '[' int32 ']' initOpt 
+                        | 'param' '['! int32 ']'! initOpt 
                         ;
 
-scopeBlock              : scopeOpen methodDecls '}' 
+scopeBlock              : scopeOpen methodDecls '}'! 
                         ;
 
-scopeOpen               : '{' 
+scopeOpen               : '{'! 
                         ;
 
 /* Structured exception handling directives  */                          
@@ -418,11 +415,11 @@ sehClauses              : sehClause sehClauses
                         ;
 
 tryBlock                : tryHead scopeBlock 
-                        | tryHead id 'to' id 
-                        | tryHead int32 'to' int32 
+                        | tryHead id 'to'! id 
+                        | tryHead int32 'to'! int32 
                         ;
 
-tryHead                 : '.try' 
+tryHead                 : '.try'! 
                         ;
 
 
@@ -438,29 +435,29 @@ filterClause            : filterHead scopeBlock
                         | filterHead int32 
                         ;
 
-filterHead              : 'filter'  
+filterHead              : 'filter'!  
                         ;
 
-catchClause             : 'catch' typeSpec 
+catchClause             : 'catch'! typeSpec 
                         ;
 
-finallyClause           : 'finally' 
+finallyClause           : 'finally'! 
                         ;
 
-faultClause             : 'fault' 
+faultClause             : 'fault'! 
                         ;
 
 handlerBlock            : scopeBlock                  
-                        | 'handler' id 'to' id 
-                        | 'handler' int32 'to' int32 
+                        | 'handler' id 'to'! id 
+                        | 'handler' int32 'to'! int32 
                         ;
 
 /*  Data declaration  */
 dataDecl                : ddHead ddBody
                         ;
 
-ddHead                  : '.data' tls id '=' 
-                        | '.data' tls  
+ddHead                  : '.data'! tls id '=' 
+                        | '.data'! tls  
                         ;
 
 tls                     : /* EMPTY */ 
@@ -468,27 +465,27 @@ tls                     : /* EMPTY */
                         | 'cil' 
                         ;
 
-ddBody                  : '{' ddItemList '}'
+ddBody                  : '{'! ddItemList '}'!
                         | ddItem
                         ;
 
-ddItemList              : ddItem ',' ddItemList
+ddItemList              : ddItem ','! ddItemList
                         | ddItem
                         ;
 
 ddItemCount             : /* EMPTY */ 
-                        | '[' int32 ']' 
+                        | '['! int32 ']'! 
                         ;
 
-ddItem                  : 'char' '*' '(' compQstring ')' 
-                        | '&' '(' id ')' 
-                        | bytearrayhead bytes ')' 
-                        | 'float32' '(' float64 ')' ddItemCount 
-                        | 'float64' '(' float64 ')' ddItemCount 
-                        | 'int64' '(' int64 ')' ddItemCount 
-                        | 'int32' '(' int32 ')' ddItemCount 
-                        | 'int16' '(' int32 ')' ddItemCount 
-                        | 'int8' '(' int32 ')' ddItemCount 
+ddItem                  : 'char' '*' '('! compQstring ')'! 
+                        | '&' '('! id ')'! 
+                        | bytearrayhead bytes ')'! 
+                        | 'float32' '('! float64 ')'! ddItemCount 
+                        | 'float64' '('! float64 ')'! ddItemCount 
+                        | 'int64' '('! int64 ')'! ddItemCount 
+                        | 'int32' '('! int32 ')'! ddItemCount 
+                        | 'int16' '('! int32 ')'! ddItemCount 
+                        | 'int8' '('! int32 ')'! ddItemCount 
                         | 'float32' ddItemCount 
                         | 'float64' ddItemCount 
                         | 'int64' ddItemCount 
@@ -498,28 +495,28 @@ ddItem                  : 'char' '*' '(' compQstring ')'
                         ;
 
 /*  Default values declaration for fields, parameters and verbal form of CA blob description  */
-fieldSerInit            : 'float32' '(' float64 ')' 
-                        | 'float64' '(' float64 ')' 
-                        | 'float32' '(' int32 ')' 
-                        | 'float64' '(' int64 ')' 
-                        | 'int64' '(' int64 ')'  
-                        | 'int32' '(' int32 ')' 
-                        | 'int16' '(' int32 ')' 
-                        | 'int8' '(' int32 ')' 
-                        | 'unsigned' 'int64' '(' int64 ')'  
-                        | 'unsigned' 'int32' '(' int32 ')' 
-                        | 'unsigned' 'int16' '(' int32 ')' 
-                        | 'unsigned' 'int8' '(' int32 ')' 
-                        | 'uint64' '(' int64 ')'  
-                        | 'uint32' '(' int32 ')' 
-                        | 'uint16' '(' int32 ')' 
-                        | 'uint8' '(' int32 ')' 
-                        | 'char' '(' int32 ')' 
-                        | 'bool' '(' truefalse ')' 
-                        | bytearrayhead bytes ')' 
+fieldSerInit            : 'float32' '('! float64 ')'! 
+                        | 'float64' '('! float64 ')'! 
+                        | 'float32' '('! int32 ')'! 
+                        | 'float64' '('! int64 ')'! 
+                        | 'int64' '('! int64 ')'! 
+                        | 'int32' '('! int32 ')'! 
+                        | 'int16' '('! int32 ')'! 
+                        | 'int8' '('! int32 ')'! 
+                        | 'unsigned' 'int64' '('! int64 ')'!  
+                        | 'unsigned' 'int32' '('! int32 ')'! 
+                        | 'unsigned' 'int16' '('! int32 ')'! 
+                        | 'unsigned' 'int8' '('! int32 ')'! 
+                        | 'uint64' '('! int64 ')'!  
+                        | 'uint32' '('! int32 ')'! 
+                        | 'uint16' '('! int32 ')'! 
+                        | 'uint8' '('! int32 ')'! 
+                        | 'char' '('! int32 ')'! 
+                        | 'bool' '('! truefalse ')'! 
+                        | bytearrayhead bytes ')'! 
                         ;
                         
-bytearrayhead           : 'bytearray' '(' 
+bytearrayhead           : 'bytearray'! '('! 
                         ;
 
 bytes                   : /* EMPTY */ 
@@ -537,31 +534,31 @@ fieldInit               : fieldSerInit
 
 /*  Values for verbal form of CA blob description  */
 serInit                 : fieldSerInit 
-                        | 'string' '(' 'nullref' ')' 
-                        | 'string' '(' SQSTRING ')' 
-                        | 'type' '(' 'class' SQSTRING ')' 
-                        | 'type' '(' className ')' 
-                        | 'type' '(' 'nullref' ')' 
-                        | 'object' '(' serInit ')'  
-                        | 'float32' '[' int32 ']' '(' f32seq ')' 
-                        | 'float64' '[' int32 ']' '(' f64seq ')' 
-                        | 'int64' '[' int32 ']' '(' i64seq ')' 
-                        | 'int32' '[' int32 ']' '(' i32seq ')' 
-                        | 'int16' '[' int32 ']' '(' i16seq ')' 
-                        | 'int8' '[' int32 ']' '(' i8seq ')' 
-                        | 'uint64' '[' int32 ']' '(' i64seq ')' 
-                        | 'uint32' '[' int32 ']' '(' i32seq ')' 
-                        | 'uint16' '[' int32 ']' '(' i16seq ')' 
-                        | 'uint8' '[' int32 ']' '(' i8seq ')' 
-                        | 'unsigned' 'int64' '[' int32 ']' '(' i64seq ')' 
-                        | 'unsigned' 'int32' '[' int32 ']' '(' i32seq ')' 
-                        | 'unsigned' 'int16' '[' int32 ']' '(' i16seq ')' 
-                        | 'unsigned' 'int8' '[' int32 ']' '(' i8seq ')' 
-                        | 'char' '[' int32 ']' '(' i16seq ')' 
-                        | 'bool' '[' int32 ']' '(' boolSeq ')' 
-                        | 'string' '[' int32 ']' '(' sqstringSeq ')' 
-                        | 'type' '[' int32 ']' '(' classSeq ')' 
-                        | 'object' '[' int32 ']' '(' objSeq ')' 
+                        | 'string' '('! 'nullref' ')'! 
+                        | 'string' '('! SQSTRING ')'! 
+                        | 'type' '('! 'class' SQSTRING ')'! 
+                        | 'type' '('! className ')'! 
+                        | 'type' '('! 'nullref' ')'! 
+                        | 'object' '('! serInit ')'!  
+                        | 'float32' '['! int32 ']'! '('! f32seq ')'! 
+                        | 'float64' '['! int32 ']'! '('! f64seq ')'! 
+                        | 'int64' '['! int32 ']'! '('! i64seq ')'! 
+                        | 'int32' '['! int32 ']'! '('! i32seq ')'! 
+                        | 'int16' '['! int32 ']'! '('! i16seq ')'! 
+                        | 'int8' '['! int32 ']'! '('! i8seq ')'! 
+                        | 'uint64' '['! int32 ']'! '('! i64seq ')'! 
+                        | 'uint32' '['! int32 ']'! '('! i32seq ')'! 
+                        | 'uint16' '['! int32 ']'! '('! i16seq ')'! 
+                        | 'uint8' '['! int32 ']'! '('! i8seq ')'! 
+                        | 'unsigned' 'int64' '['! int32 ']'! '('! i64seq ')'! 
+                        | 'unsigned' 'int32' '['! int32 ']'! '('! i32seq ')'! 
+                        | 'unsigned' 'int16' '['! int32 ']'! '('! i16seq ')'! 
+                        | 'unsigned' 'int8' '['! int32 ']'! '('! i8seq ')'! 
+                        | 'char' '['! int32 ']'! '('! i16seq ')'! 
+                        | 'bool' '['! int32 ']'! '('! boolSeq ')'! 
+                        | 'string' '['! int32 ']'! '('! sqstringSeq ')'! 
+                        | 'type' '['! int32 ']'! '('! classSeq ')'! 
+                        | 'object' '['! int32 ']'! '('! objSeq ')'! 
                         ;
 
 
@@ -691,7 +688,7 @@ instr_tok               : LDTOKEN
 instr_switch            : SWITCH 
                         ;
 
-instr_r_head            : instr_r '(' 
+instr_r_head            : instr_r! '('! 
                         ;
 
 
@@ -702,41 +699,41 @@ instr                   : instr_none
                         | instr_i8 int64 
                         | instr_r float64 
                         | instr_r int64 
-                        | instr_r_head bytes ')' 
+                        | instr_r_head bytes ')'! 
                         | instr_brtarget int32 
                         | instr_brtarget id 
                         | instr_method methodRef 
-                        | instr_field type typeSpec '::' dottedName 
+                        | instr_field type typeSpec '::'! dottedName 
                         | instr_field type dottedName 
                         | instr_field mdtoken 
                         | instr_field typedef_f 
                         | instr_field typedef_mr 
                         | instr_type typeSpec 
                         | instr_string compQstring 
-                        | instr_string 'ansi' '(' compQstring ')' 
-                        | instr_string bytearrayhead bytes ')' 
-                        | instr_sig callConv type '(' sigArgs0 ')' 
+                        | instr_string 'ansi' '('! compQstring ')'! 
+                        | instr_string bytearrayhead bytes ')'! 
+                        | instr_sig callConv type '('! sigArgs0 ')'! 
                         | instr_tok ownerType /* ownerType ::= memberRef | typeSpec */ 
-                        | instr_switch '(' labels ')' 
+                        | instr_switch '('! labels ')'! 
                         ;
                         
 labels                  : /* empty */ 
-                        | id ',' labels 
-                        | int32 ',' labels 
+                        | id ','! labels 
+                        | int32 ','! labels 
                         | id 
                         | int32 
                         ;
 
 /*  Signatures  */
 tyArgs0                 : /* EMPTY */ 
-                        | '<' tyArgs1 '>' 
+                        | '<'! tyArgs1 '>'! 
                         ;
 
 tyArgs1                 : /* EMPTY */ 
                         | tyArgs2 
                         ;
 
-tyArgs2                 : (type) (',' type)* 
+tyArgs2                 : (type) (','! type)* 
                         ;
 
 
@@ -744,7 +741,7 @@ sigArgs0                : /* EMPTY */
                         | sigArgs1 
                         ;
 
-sigArgs1                : (sigArg) (',' sigArg)* 
+sigArgs1                : (sigArg) (','! sigArg)* 
                         ;
 
 sigArg                  : '...' 
@@ -753,10 +750,10 @@ sigArg                  : '...'
                         ;
 
 /*  Class referencing  */
-className               : '[' dottedName ']' slashedName 
-                        | '[' mdtoken ']' slashedName 
-                        | '[' '*' ']' slashedName 
-                        | '[' '.module' dottedName ']' slashedName 
+className               : '['! dottedName ']'! slashedName 
+                        | '['! mdtoken ']'! slashedName 
+                        | '['! '*' ']'! slashedName 
+                        | '['! '.module' dottedName ']'! slashedName 
                         | slashedName 
                         | mdtoken 
                         | typedef_t 
@@ -765,30 +762,30 @@ className               : '[' dottedName ']' slashedName
                         | '.nester' 
                         ;
 
-slashedName             : (dottedName) ('/' dottedName)* 
+slashedName             : (dottedName) ('/'! dottedName)* 
                         ;
 
 typeSpec                : className 
-                        | '[' dottedName ']' 
-                        | '[' '.module' dottedName ']' 
+                        | '['! dottedName ']'! 
+                        | '['! '.module' dottedName ']'! 
                         | type 
                         ;
 
 /*  Native types for marshaling signatures  */                         
-nativeType              : (/* EMPTY */ | 'custom' '(' compQstring ',' compQstring ',' compQstring ',' compQstring ')' | 'custom' '(' compQstring ',' compQstring ')' | 'fixed' 'sysstring' '[' int32 ']' | 'fixed' 'array' '[' int32 ']' nativeType | 'variant' | 'currency' | 'syschar' | 'void' | 'bool' | 'int8' | 'int16' | 'int32' | 'int64' | 'float32' | 'float64' | 'error' | 'unsigned' 'int8' | 'unsigned' 'int16' | 'unsigned' 'int32' | 'unsigned' 'int64' | 'uint8' | 'uint16' | 'uint32' | 'uint64' | 'decimal' | 'date' | 'bstr' | 'lpstr' | 'lpwstr' | 'lptstr' | 'objectref' | 'iunknown'  iidParamIndex | 'idispatch' iidParamIndex | 'struct' | 'interface' iidParamIndex | 'safearray' variantType | 'safearray' variantType ',' compQstring | 'int' | 'unsigned' 'int' | 'uint' | 'nested' 'struct' | 'byvalstr' | 'ansi' 'bstr' | 'tbstr' | 'variant' 'bool' | 'method' | 'as' 'any' | 'lpstruct' | typedef_ts) ('*' | '[' ']' | '[' int32 ']' | '[' int32 '+' int32 ']' | '[' '+' int32 ']')* 
+nativeType              : (/* EMPTY */ | 'custom' '('! compQstring ','! compQstring ','! compQstring ','! compQstring ')'! | 'custom' '('! compQstring ','! compQstring ')'! | 'fixed' 'sysstring' '['! int32 ']'! | 'fixed' 'array' '['! int32 ']'! nativeType | 'variant' | 'currency' | 'syschar' | 'void' | 'bool' | 'int8' | 'int16' | 'int32' | 'int64' | 'float32' | 'float64' | 'error' | 'unsigned' 'int8' | 'unsigned' 'int16' | 'unsigned' 'int32' | 'unsigned' 'int64' | 'uint8' | 'uint16' | 'uint32' | 'uint64' | 'decimal' | 'date' | 'bstr' | 'lpstr' | 'lpwstr' | 'lptstr' | 'objectref' | 'iunknown'  iidParamIndex | 'idispatch' iidParamIndex | 'struct' | 'interface' iidParamIndex | 'safearray' variantType | 'safearray' variantType ','! compQstring | 'int' | 'unsigned' 'int' | 'uint' | 'nested' 'struct' | 'byvalstr' | 'ansi' 'bstr' | 'tbstr' | 'variant' 'bool' | 'method' | 'as' 'any' | 'lpstruct' | typedef_ts) ('*' | '['! ']'! | '['! int32 ']'! | '['! int32 '+'! int32 ']'! | '['! '+'! int32 ']'!)* 
                         ;
                         
 iidParamIndex           : /* EMPTY */ 
-                        | '(' 'iidparam' '=' int32 ')' 
+                        | '('! 'iidparam' '='! int32 ')'! 
                         ;                        
 
-variantType             : (/* EMPTY */ | 'null' | 'variant' | 'currency' | 'void' | 'bool' | 'int8' | 'int16' | 'int32' | 'int64' | 'float32' | 'float64' | 'unsigned' 'int8' | 'unsigned' 'int16' | 'unsigned' 'int32' | 'unsigned' 'int64' | 'uint8' | 'uint16' | 'uint32' | 'uint64' | '*' | 'decimal' | 'date' | 'bstr' | 'lpstr' | 'lpwstr' | 'iunknown' | 'idispatch' | 'safearray' | 'int' | 'unsigned' 'int' | 'uint' | 'error' | 'hresult' | 'carray' | 'userdefined' | 'record' | 'filetime' | 'blob' | 'stream' | 'storage' | 'streamed_object' | 'stored_object' | 'blob_object' | 'cf' | 'clsid' ) ('[' ']' | 'vector' | '&')*
+variantType             : (/* EMPTY */ | 'null' | 'variant' | 'currency' | 'void' | 'bool' | 'int8' | 'int16' | 'int32' | 'int64' | 'float32' | 'float64' | 'unsigned' 'int8' | 'unsigned' 'int16' | 'unsigned' 'int32' | 'unsigned' 'int64' | 'uint8' | 'uint16' | 'uint32' | 'uint64' | '*' | 'decimal' | 'date' | 'bstr' | 'lpstr' | 'lpwstr' | 'iunknown' | 'idispatch' | 'safearray' | 'int' | 'unsigned' 'int' | 'uint' | 'error' | 'hresult' | 'carray' | 'userdefined' | 'record' | 'filetime' | 'blob' | 'stream' | 'storage' | 'streamed_object' | 'stored_object' | 'blob_object' | 'cf' | 'clsid' ) ('['! ']'! | 'vector' | '&')*
                                   ;
 /*  Managed types for signatures  */                        
-type                    : ('class' className | 'object' | 'value' 'class' className | 'valuetype' className | methodSpec callConv type '*' '(' sigArgs0 ')' | '!' '!' int32 | '!' int32 | '!' '!' dottedName | '!' dottedName | 'typedref' | 'void' | 'native' 'int' | 'native' 'unsigned' 'int' | 'native' 'uint' | 'native' 'float' | simpleType | '...' type) ('[' ']' | '[' bounds1 ']'  
+type                    : ('class' className | 'object' | 'value' 'class' className | 'valuetype' className | methodSpec callConv type '*' '('! sigArgs0 ')'! | '!' '!' int32 | '!' int32 | '!' '!' dottedName | '!' dottedName | 'typedref' | 'void' | 'native' 'int' | 'native' 'unsigned' 'int' | 'native' 'uint' | 'native' 'float' | simpleType | '...' type) ('['! ']'! | '['! bounds1 ']'!  
                         /* uncomment when and if this type is supported by the Runtime
                         | type 'value' '[' int32 ']' 
-                        */ | '&' | '*' | 'pinned' | 'modreq' '(' typeSpec ')' | 'modopt' '(' typeSpec ')' | '<' tyArgs1 '>')* 
+                        */ | '&' | '*' | 'pinned' | 'modreq' '('! typeSpec ')'! | 'modopt' '('! typeSpec ')'! | '<'! tyArgs1 '>'!)* 
                         ;
                         
 simpleType              : 'char' 
@@ -811,43 +808,43 @@ simpleType              : 'char'
                         | typedef_ts 
                         ;
                         
-bounds1                 : (bound) (',' bound)* 
+bounds1                 : (bound) (','! bound)* 
                         ;
 
 bound                   : /* EMPTY */ 
                         | '...' 
                         | int32  
-                        | int32 '...' int32    
-                        | int32 '...'  
+                        | int32 '...'! int32    
+                        | int32 '...'!  
                         ;
 
 /*  Security declarations  */                        
-secDecl                 : '.permission' secAction typeSpec '(' nameValPairs ')' 
-                        | '.permission' secAction typeSpec '=' '{' customBlobDescr '}' 
+secDecl                 : '.permission' secAction typeSpec '('! nameValPairs ')'! 
+                        | '.permission' secAction typeSpec '=' '{'! customBlobDescr '}'! 
                         | '.permission' secAction typeSpec 
                         | psetHead bytes ')' 
                         | '.permissionset' secAction compQstring 
-                        | '.permissionset' secAction '=' '{' secAttrSetBlob '}' 
+                        | '.permissionset' secAction '=' '{'! secAttrSetBlob '}'! 
                         ;
                         
 secAttrSetBlob          : /* EMPTY */ 
                         | secAttrBlob 
-                        | secAttrBlob ',' secAttrSetBlob 
+                        | secAttrBlob ','! secAttrSetBlob 
                         ;
                         
-secAttrBlob             : typeSpec '=' '{' customBlobNVPairs '}'                                                
-                        | 'class' SQSTRING '=' '{' customBlobNVPairs '}' 
+secAttrBlob             : typeSpec '='! '{'! customBlobNVPairs '}'!                                                
+                        | 'class' SQSTRING '='! '{'! customBlobNVPairs '}'! 
                         ;                                               
 
-psetHead                : '.permissionset' secAction '=' '(' 
-                        | '.permissionset' secAction 'bytearray' '(' 
+psetHead                : '.permissionset'! secAction '='! '('! 
+                        | '.permissionset'! secAction 'bytearray' '('! 
                         ;
 
 nameValPairs            : nameValPair 
-                        | nameValPair ',' nameValPairs 
+                        | nameValPair ','! nameValPairs 
                         ;
 
-nameValPair             : compQstring '=' caValue 
+nameValPair             : compQstring '='! caValue 
                         ;
 
 truefalse               : 'true' 
@@ -856,12 +853,12 @@ truefalse               : 'true'
 
 caValue                 : truefalse 
                         | int32 
-                        | 'int32' '(' int32 ')' 
+                        | 'int32' '('! int32 ')'! 
                         | compQstring 
-                        | className '(' 'int8' ':' int32 ')' 
-                        | className '(' 'int16' ':' int32 ')' 
-                        | className '(' 'int32' ':' int32 ')' 
-                        | className '(' int32 ')' 
+                        | className '('! 'int8' ':'! int32 ')'! 
+                        | className '('! 'int16' ':'! int32 ')'! 
+                        | className '('! 'int32' ':'! int32 ')'! 
+                        | className '('! int32 ')'! 
                         ;
 
 secAction               : 'request' 
@@ -882,7 +879,7 @@ secAction               : 'request'
                         ;
 
 /*  External source declarations  */                        
-esHead                  : '.line' 
+esHead                  : '.line'! 
                         // | P_LINE // not supported 
                         ;
                         
@@ -900,21 +897,21 @@ extSourceSpec           : esHead int32 SQSTRING
                         ;
 
 /*  Manifest declarations  */                         
-fileDecl                : '.file' fileAttr dottedName fileEntry hashHead bytes ')' fileEntry 
-                        | '.file' fileAttr dottedName fileEntry 
+fileDecl                : '.file'! fileAttr dottedName fileEntry hashHead bytes ')'! fileEntry 
+                        | '.file'! fileAttr dottedName fileEntry 
                         ;
 
 fileAttr                : (/* EMPTY */) ('nometadata')* 
                         ;
 
 fileEntry               : /* EMPTY */ 
-                        | '.entrypoint' 
+                        | '.entrypoint'! 
                         ;
 
-hashHead                : '.hash' '=' '(' 
+hashHead                : '.hash'! '='! '('! 
                         ;
 
-assemblyHead            : '.assembly' asmAttr dottedName 
+assemblyHead            : '.assembly'! asmAttr dottedName 
                         ;
 
 asmAttr                 : (/* EMPTY */) ('retargetable' | 'legacy' 'library' | 'cil' | 'x86' | 'ia64' | 'amd64')* 
@@ -932,39 +929,39 @@ intOrWildcard           : int32
                         | '*' 
                         ;                        
 
-asmOrRefDecl            : publicKeyHead bytes ')' 
-                        | '.ver' intOrWildcard ':' intOrWildcard ':' intOrWildcard ':' intOrWildcard 
+asmOrRefDecl            : publicKeyHead bytes ')'! 
+                        | '.ver' intOrWildcard ':' intOrWildcard ':'! intOrWildcard ':'! intOrWildcard 
                         | '.locale' compQstring 
-                        | localeHead bytes ')' 
+                        | localeHead bytes ')'! 
                         | customAttrDecl
                         ;
 
-publicKeyHead           : '.publickey' '=' '(' 
+publicKeyHead           : '.publickey'! '='! '('! 
                         ;
 
-publicKeyTokenHead      : '.publickeytoken' '=' '(' 
+publicKeyTokenHead      : '.publickeytoken'! '='! '('! 
                         ;
 
-localeHead              : '.locale' '=' '(' 
+localeHead              : '.locale'! '='! '('! 
                         ;
 
-assemblyRefHead         : '.assembly' 'extern' asmAttr dottedName 
-                        | '.assembly' 'extern' asmAttr dottedName 'as' dottedName 
+assemblyRefHead         : '.assembly'! 'extern'! asmAttr dottedName 
+                        | '.assembly'! 'extern'! asmAttr dottedName 'as'! dottedName 
                         ;
 
 assemblyRefDecls        : (/* EMPTY */) (assemblyRefDecl)*
                         ;
 
-assemblyRefDecl         : hashHead bytes ')' 
+assemblyRefDecl         : hashHead bytes ')'! 
                         | asmOrRefDecl
-                        | publicKeyTokenHead bytes ')' 
+                        | publicKeyTokenHead bytes ')'! 
                         | 'auto' 
                         ;
 
-exptypeHead             : '.class' 'extern' exptAttr dottedName  
+exptypeHead             : '.class'! 'extern'! exptAttr dottedName  
                         ;
 
-exportHead              : '.export' exptAttr dottedName   /* deprecated */ 
+exportHead              : '.export'! exptAttr dottedName   /* deprecated */ 
                         ;
 
 exptAttr                : (/* EMPTY */) ('private' | 'public' | 'forwarder' | 'nested' 'public' | 'nested' 'private' | 'nested' 'family' | 'nested' 'assembly' | 'nested' 'famandassem' | 'nested' 'famorassem')* 
@@ -976,13 +973,13 @@ exptypeDecls            : (/* EMPTY */) (exptypeDecl)*
 exptypeDecl             : '.file' dottedName 
                         | '.class' 'extern' slashedName 
                         | '.assembly' 'extern' dottedName 
-                        | 'mdtoken' '(' int32 ')' 
+                        | 'mdtoken' '('! int32 ')'! 
                         | '.class'  int32 
                         | customAttrDecl
                         ;
 
-manifestResHead         : '.mresource' manresAttr dottedName 
-                        | '.mresource' manresAttr dottedName 'as' dottedName 
+manifestResHead         : '.mresource'! manresAttr dottedName 
+                        | '.mresource'! manresAttr dottedName 'as'! dottedName 
                         ;
 
 manresAttr              : (/* EMPTY */) ('public' | 'private')* 
@@ -991,7 +988,7 @@ manresAttr              : (/* EMPTY */) ('public' | 'private')*
 manifestResDecls        : (/* EMPTY */) (manifestResDecl)*
                         ;
 
-manifestResDecl         : '.file' dottedName 'at' int32 
+manifestResDecl         : '.file' dottedName 'at'! int32 
                         | '.assembly' 'extern' dottedName 
                         | customAttrDecl
                         ;
